@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+  <title>DARVIN — WEAR THE REBEL</title>
+  <meta name="description" content="DARVIN premium streetwear. Bold oversized and graphic T-shirts. WEAR THE REBEL.">
+  <style>
+    :root{--bg:#080808;--panel:#111;--silver:#d8d8d8;--muted:#999;--line:#303030;--white:#f5f5f5}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,Helvetica,sans-serif}
+    a{color:inherit;text-decoration:none} button,input,select,textarea{font:inherit}
+    .topline{background:#d9d9d9;color:#080808;text-align:center;padding:9px 12px;font-size:11px;font-weight:800;letter-spacing:2px}
+    header{position:sticky;top:0;z-index:20;background:rgba(8,8,8,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .nav{max-width:1200px;margin:auto;padding:17px 22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-family:Georgia,serif;font-weight:900;font-size:28px;letter-spacing:5px}
+    .brand span{color:#aaa}.navlinks{display:flex;gap:25px;color:#ccc;font-size:12px;letter-spacing:1.5px;text-transform:uppercase}
+    .navlinks a:hover{color:white}.cart{border:1px solid #777;padding:9px 14px;font-size:11px;letter-spacing:1px;background:transparent;color:white;cursor:pointer}
+    .hero{min-height:590px;display:grid;grid-template-columns:1.05fr .95fr;max-width:1200px;margin:auto;padding:55px 22px 65px;align-items:center;gap:30px}
+    .eyebrow{color:#aaa;letter-spacing:4px;font-size:11px;font-weight:bold}
+    h1{font-family:Georgia,serif;font-size:clamp(58px,9vw,112px);line-height:.88;letter-spacing:-5px;margin:22px 0}
+    h1 em{font-style:normal;color:#9e9e9e}
+    .hero p{max-width:440px;color:#aaa;line-height:1.8;font-size:14px}
+    .actions{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:15px 22px;background:#e5e5e5;color:#090909;font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;border:1px solid #e5e5e5;cursor:pointer}
+    .btn.outline{background:transparent;color:white;border-color:#777}
+    .hero-art{min-height:450px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid #292929;background:#000}.hero-logo{width:100%;height:100%;max-height:450px;object-fit:contain;display:block}.product-photo{width:100%;height:100%;object-fit:cover;display:block}.product-art.real{padding:0;background:#080808;overflow:hidden}
+    .hero-art:before{content:none}.hero-logo{width:100%;height:100%;max-height:450px;object-fit:contain;display:block}
+    .shirt{position:relative;width:270px;height:310px;background:linear-gradient(135deg,#242424,#050505 65%);clip-path:polygon(23% 0,38% 8%,62% 8%,77% 0,100% 22%,83% 43%,75% 33%,78% 100%,22% 100%,25% 33%,17% 43%,0 22%);filter:drop-shadow(0 20px 22px #000);display:flex;align-items:center;justify-content:center}
+    .shirt:before{content:"";position:absolute;top:12px;width:75px;height:35px;border:2px solid #555;border-radius:0 0 50% 50%;border-top:0}
+    .shirt-mark{font-family:Georgia,serif;font-size:28px;letter-spacing:3px;color:#ddd;text-shadow:0 0 12px #aaa;transform:rotate(-5deg)}
+    .art-caption{position:absolute;bottom:18px;left:20px;right:20px;display:flex;justify-content:space-between;color:#aaa;font-size:10px;letter-spacing:2px}
+    section{max-width:1200px;margin:auto;padding:70px 22px}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:28px}
+    h2{font-family:Georgia,serif;font-size:clamp(32px,5vw,52px);margin:10px 0 0;letter-spacing:-1px}
+    .sub{color:#999;font-size:13px;line-height:1.7}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .product{background:#101010;border:1px solid #292929;padding:12px}
+    .product-art{height:280px;background:#111;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.product-photo{width:100%;height:100%;object-fit:cover;display:block}
+    .product-art .shirt{width:165px;height:195px}
+    .product-art .shirt-mark{font-size:17px}
+    .tag{position:absolute;top:13px;left:13px;background:#ddd;color:#111;padding:7px 9px;font-size:9px;font-weight:bold;letter-spacing:1px}
+    .product-info{display:flex;justify-content:space-between;gap:12px;padding:15px 2px 5px}
+    .product h3{font-size:13px;letter-spacing:1px;margin:0 0 7px}
+    .product p{color:#999;font-size:11px;margin:0}
+    .price{font-size:13px;font-weight:bold;white-space:nowrap}
+    .add{width:100%;margin-top:13px;padding:12px;background:transparent;border:1px solid #555;color:#eee;font-size:10px;letter-spacing:2px;cursor:pointer}
+    .add:hover{background:#eee;color:#111}
+    .manifesto{border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center;padding:85px 22px;background:linear-gradient(110deg,#090909,#151515,#090909)}
+    .manifesto h2{font-size:clamp(42px,7vw,78px);letter-spacing:2px}
+    .manifesto p{color:#aaa;letter-spacing:3px;font-size:11px}
+    .policy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .policy{padding:23px;border:1px solid #303030;background:#101010}
+    .policy h3{font-size:12px;letter-spacing:2px}.policy p{font-size:12px;line-height:1.7;color:#999}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+    form{display:grid;gap:12px}
+    input,select,textarea{width:100%;padding:14px;background:#111;border:1px solid #444;color:white;outline:none}
+    textarea{min-height:90px;resize:vertical}
+    .note{font-size:11px;color:#888;line-height:1.7}
+    footer{border-top:1px solid #292929;padding:30px 22px;color:#888;font-size:11px}
+    .foot{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    .modal{display:none;position:fixed;inset:0;background:#000c;z-index:50;align-items:center;justify-content:center;padding:18px}
+    .modal.show{display:flex}.box{max-width:520px;width:100%;background:#101010;border:1px solid #555;padding:25px}
+    .box h2{font-size:32px}.close{float:right;background:none;border:0;color:white;font-size:25px;cursor:pointer}
+
+    .hero-art.hero-logo{background:#000}
+    .hero-art.hero-logo img{width:100%;height:100%;max-height:520px;object-fit:contain;display:block}
+    .product-art.photo-art{background:#080808;overflow:hidden}
+    .product-art.photo-art img{width:100%;height:100%;object-fit:cover;display:block}
+    .product-art.photo-art .tag{z-index:2}
+
+    @media(max-width:760px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding-top:42px}.hero-art{min-height:360px}.grid{grid-template-columns:1fr 1fr}.product-art{height:220px}.product-art .shirt{width:130px;height:155px}.policy-grid{grid-template-columns:1fr}.contact{grid-template-columns:1fr}}
+    @media(max-width:470px){.grid{grid-template-columns:1fr}.product-art{height:290px}.product-art .shirt{width:175px;height:205px}.section-head{display:block}}
+  </style>
+</head>
+<body>
+  <div class="topline">FREE SHIPPING ON SELECT ORDERS · BUILT FOR THE BOLD</div>
+  <header><nav class="nav">
+    <a class="brand" href="#"><img src="assets/darvin-logo.jpg" alt="DARVIN — Wear the Rebel" style="width:145px;height:42px;object-fit:contain;object-position:left center;mix-blend-mode:screen"></a>
+    <div class="navlinks"><a href="#shop">Shop</a><a href="#story">Our Story</a><a href="#policies">Policies</a><a href="#contact">Contact</a></div>
+    <button class="cart" onclick="openCart()">BAG (<span id="count">0</span>)</button>
+  </nav></header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <div class="eyebrow">INDEPENDENT STREETWEAR · EST. 2026</div>
+        <h1>WEAR<br><em>THE</em><br>REBEL.</h1>
+        <p>Not made to blend in. DARVIN brings bold energy to everyday streetwear with statement graphics, clean silhouettes and an unapologetically dark edge.</p>
+        <div class="actions"><a class="btn" href="#shop">Shop the collection</a><a class="btn outline" href="#story">Discover DARVIN</a></div>
+      </div>
+      <div class="hero-art"><img class="hero-logo" src="images/darvin-logo.jpg" alt="DARVIN silver gothic logo and WEAR THE REBEL tagline"><div class="art-caption"><span>DROP 001</span><span>BLACK / SILVER</span></div></div>
+    </div>
+
+    <section id="shop">
+      <div class="section-head"><div><div class="eyebrow">THE FIRST DROP</div><h2>Shop the collection</h2></div><div class="sub">Dark essentials. Loud identity.<br>Find your fit.</div></div>
+      <div class="grid" style="grid-template-columns:minmax(0,520px)">
+        <article class="product">
+          <div class="product-art" style="height:auto;background:#080808;padding:0">
+            <img src="assets/darvin-tshirt-model.jpg" alt="DARVIN black T-shirt shown on model and product display" style="width:100%;height:auto;display:block">
+            <span class="tag">SIGNATURE DROP</span>
+          </div>
+          <div class="product-info"><div><h3>DARVIN SIGNATURE OVERSIZED TEE</h3><p>Black · Silver Gothic logo · Wear the Rebel</p></div><div class="price">₹500</div></div>
+          <button class="add" onclick="addToBag('DARVIN Signature Oversized T-shirt',500)">ADD TO BAG</button>
+        </article>
+      </div>
+      <p class="note" style="margin-top:16px">Product images now use the DARVIN logo and T-shirt photos you supplied. Confirm product price, sizes and stock before publishing.</p>
+    </section>
+
+    <div class="manifesto" id="story"><div class="eyebrow">THIS IS DARVIN</div><h2>NO RULES.<br>NO APOLOGIES.</h2><p>WEAR THE REBEL.</p></div>
+
+    <section id="policies">
+      <div class="section-head"><div><div class="eyebrow">SHOP WITH CONFIDENCE</div><h2>Our promises</h2></div></div>
+      <div class="policy-grid">
+        <div class="policy"><h3>DELIVERY</h3><p>Estimated delivery: seven to ten days after order confirmation. Delivery time may vary by location.</p></div>
+        <div class="policy"><h3>RETURN & EXCHANGE</h3><p>Eligible products can be returned for an exchange or replacement. Refunds are not offered under the store's stated policy. Terms and eligibility should be confirmed before dispatch.</p></div>
+        <div class="policy"><h3>PAYMENT</h3><p>Google Pay, PhonePe, debit/credit cards and Cash on Delivery are intended payment options. Online payment requires a payment gateway setup.</p></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-head"><div><div class="eyebrow">WE'RE HERE FOR YOU</div><h2>Get in touch</h2></div></div>
+      <div class="contact">
+        <div><h3 style="letter-spacing:2px">NEED HELP?</h3><p class="sub">Reach DARVIN through WhatsApp, phone or email. Add your verified business contact details before publishing this website.</p><p class="note">WhatsApp: Add your business number<br>Phone: Add your business number<br>Email: Add your support email</p></div>
+        <form onsubmit="sendEnquiry(event)"><input id="name" placeholder="Your name" required><input id="email" type="email" placeholder="Your email" required><textarea id="message" placeholder="How can we help?" required></textarea><button class="btn" type="submit">Send enquiry</button><div class="note" id="formNote">This demo form shows a confirmation only. Connect a form service or business email to receive enquiries.</div></form>
+      </div>
+    </section>
+  </main>
+  <footer><div class="foot"><div><strong style="letter-spacing:4px;color:#eee">DARVIN</strong><br><br>WEAR THE REBEL.</div><div>© 2026 DARVIN. ALL RIGHTS RESERVED.</div></div></footer>
+
+  <div class="modal" id="cartModal"><div class="box"><button class="close" onclick="closeCart()">×</button><div class="eyebrow">YOUR SELECTION</div><h2>Your bag</h2><div id="cartItems" class="sub">Your bag is empty.</div><div id="cartTotal" style="margin:20px 0;font-weight:bold"></div><form id="checkout" onsubmit="placeOrder(event)"><input id="buyer" placeholder="Full name" required><input id="phone" placeholder="Phone number" required><input id="address" placeholder="Full delivery address" required><select id="size" required><option value="">Choose size</option><option>M</option><option>L</option><option>XXL</option></select><select id="payment" required><option value="">Choose payment method</option><option>Google Pay / UPI</option><option>PhonePe</option><option>Debit / Credit Card (gateway setup required)</option><option>Cash on Delivery</option></select><button class="btn" type="submit" style="width:100%">Continue to order</button><p class="note">Demo checkout only. Orders are not stored or charged until WhatsApp/email and payment services are connected.</p></form></div></div>
+  <script>
+    const bag=[];
+    function addToBag(name,price){bag.push({name,price});document.getElementById('count').textContent=bag.length;alert(name+' added to your bag.');}
+    function openCart(){renderCart();document.getElementById('cartModal').classList.add('show')}
+    function closeCart(){document.getElementById('cartModal').classList.remove('show')}
+    function renderCart(){document.getElementById('cartItems').innerHTML=bag.length?bag.map((x,i)=>`${i+1}. ${x.name} — ₹${x.price}`).join('<br>'):'Your bag is empty.';document.getElementById('cartTotal').textContent='Total: ₹'+bag.reduce((s,x)=>s+x.price,0)}
+    function placeOrder(e){e.preventDefault();if(!bag.length){alert('Your bag is empty.');return;}const details={customer:buyer.value,phone:phone.value,address:address.value,size:size.value,payment:payment.value,items:bag.map(x=>x.name).join(', '),total:bag.reduce((s,x)=>s+x.price,0)};alert('Demo order details prepared. Connect your verified WhatsApp number, email and payment gateway to receive real orders.');console.log('DARVIN demo order',details);}
+    function sendEnquiry(e){e.preventDefault();document.getElementById('formNote').textContent='Thanks, '+document.getElementById('name').value+'. The demo form is ready; connect an email/form service to receive this enquiry.';e.target.reset();}
+  </script>
+</body>
+</html>
