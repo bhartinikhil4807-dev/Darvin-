@@ -1,14 +1,11 @@
-
-!DOCTYPE html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>DARVIN — WEAR THE REBEL</title>
-
-<meta name="description" content="DARVIN Premium Black Streetwear. Oversized, Gym and Classic T-Shirts. Order directly on WhatsApp.">
-
+<meta name="description" content="DARVIN Premium Streetwear. Oversized, Gym and Classic T-Shirts. Order on WhatsApp.">
 <meta name="theme-color" content="#111111">
 
 <style>
@@ -17,58 +14,6 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 }
-
-:root{
---black:#080808;
---dark:#151515;
---silver:#c7c7c7;
---white:#ffffff;
---gray:#999999;
-}
-
-<!-- DARVIN PROMOTIONAL VIDEO -->
-<section class="darvin-promo">
-  <h2>DARVIN — WEAR THE REBEL</h2>
-  <p>Not just a T-shirt. It's your identity.</p>
-
-  <video
-    controls
-    autoplay
-    muted
-    loop
-    playsinline
-    poster="images/darvin-poster.jpg">
-
-    <source src="DARVIN-promo.mp4" type="video/mp4">
-    Your browser does not support video playback.
-  </video>
-
-  <a href="https://bhartinikhil4807-dev.github.io/Darvin-/">
-    EXPLORE DARVIN COLLECTION
-  </a>
-</section>
-
-<style>
-.darvin-promo {
-  text-align: center;
-  padding: 30px 15px;
-  background: #f5f5f5;
-  color: #111;
-}
-
-.darvin-promo h2 {
-  font-weight: 900;
-  letter-spacing: 2px;
-}
-
-.darvin-promo video {
-  width: 100%;
-  max-width: 600px;
-  border-radius: 12px;
-  display: block;
-  margin: 20px auto;
-}
-</style>
 
 body{
 font-family:Arial,Helvetica,sans-serif;
@@ -83,7 +28,6 @@ color:inherit;
 
 button{
 cursor:pointer;
-font-family:inherit;
 }
 
 .topbar{
@@ -96,7 +40,7 @@ letter-spacing:2px;
 }
 
 .brand{
-background:#fff;
+background:white;
 text-align:center;
 padding:22px 10px;
 }
@@ -122,10 +66,6 @@ padding:15px;
 background:#111;
 color:white;
 font-size:12px;
-}
-
-nav a:hover{
-color:#bbb;
 }
 
 .hero{
@@ -158,8 +98,40 @@ padding:14px 25px;
 margin-top:20px;
 font-weight:bold;
 font-size:12px;
-letter-spacing:1px;
-border:none;
+}
+
+.darvin-promo{
+text-align:center;
+padding:40px 15px;
+}
+
+.darvin-promo video{
+width:100%;
+max-width:600px;
+display:block;
+margin:20px auto;
+border-radius:12px;
+background:#111;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:12px;
+padding:25px 5%;
+background:white;
+}
+
+.feature{
+text-align:center;
+padding:15px;
+border:1px solid #eee;
+}
+
+.feature p{
+font-size:12px;
+color:#777;
+margin-top:8px;
 }
 
 .section{
@@ -181,31 +153,6 @@ color:#777;
 margin-top:10px;
 }
 
-.features{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:12px;
-padding:25px 5%;
-background:white;
-}
-
-.feature{
-text-align:center;
-padding:15px;
-border:1px solid #eee;
-}
-
-.feature b{
-font-size:12px;
-letter-spacing:1px;
-}
-
-.feature p{
-font-size:12px;
-color:#777;
-margin-top:8px;
-}
-
 .products{
 display:grid;
 grid-template-columns:repeat(3,1fr);
@@ -214,7 +161,7 @@ gap:20px;
 
 .product{
 background:white;
-border:1px solid #e5e5e5;
+border:1px solid #ddd;
 padding:12px;
 }
 
@@ -223,7 +170,6 @@ width:100%;
 height:350px;
 object-fit:contain;
 background:#eee;
-display:block;
 }
 
 .product h3{
@@ -247,7 +193,6 @@ margin:10px 0;
 width:100%;
 padding:12px;
 margin:8px 0;
-border:1px solid #ddd;
 }
 
 .action{
@@ -261,7 +206,6 @@ margin-top:10px;
 padding:12px;
 border:none;
 font-weight:bold;
-font-size:12px;
 }
 
 .add{
@@ -271,12 +215,11 @@ color:white;
 
 .order{
 background:#25D366;
-color:#fff;
+color:white;
 }
 
 .share{
 background:#eee;
-color:#111;
 }
 
 .gallery{
@@ -299,21 +242,12 @@ text-align:center;
 padding:50px 20px;
 }
 
-.promo h2{
-font-size:32px;
-letter-spacing:4px;
-}
-
 .form-panel{
 max-width:700px;
 margin:auto;
 background:white;
 padding:25px;
 border:1px solid #ddd;
-}
-
-.form-panel h3{
-margin-bottom:20px;
 }
 
 .form-grid{
@@ -339,12 +273,10 @@ padding:13px;
 border:1px solid #ccc;
 background:white;
 font-size:14px;
-border-radius:2px;
 }
 
 textarea{
 min-height:90px;
-resize:vertical;
 }
 
 .total-box{
@@ -352,7 +284,6 @@ background:#f5f5f5;
 padding:18px;
 margin:20px 0;
 line-height:2;
-font-size:14px;
 }
 
 .submit-order{
@@ -380,12 +311,6 @@ text-align:center;
 padding:50px 20px;
 }
 
-.contact h2{
-font-size:30px;
-letter-spacing:3px;
-margin-bottom:20px;
-}
-
 .contact p{
 margin:12px 0;
 color:#ccc;
@@ -399,16 +324,6 @@ padding:14px;
 background:white;
 color:black;
 font-weight:bold;
-font-size:13px;
-}
-
-footer{
-background:#000;
-color:#aaa;
-text-align:center;
-padding:25px;
-font-size:12px;
-line-height:2;
 }
 
 .image-manager{
@@ -419,74 +334,49 @@ max-width:800px;
 border:1px solid #ddd;
 }
 
-.image-manager h3{
-margin-bottom:12px;
-}
-
-.image-manager p{
-font-size:13px;
-color:#666;
-line-height:1.7;
-}
-
-.image-manager button{
-padding:12px;
-background:#111;
-color:white;
-border:none;
-margin-top:10px;
+footer{
+background:black;
+color:#aaa;
+text-align:center;
+padding:25px;
+font-size:12px;
+line-height:2;
 }
 
 @media(max-width:800px){
-
 .products{
 grid-template-columns:repeat(2,1fr);
 }
-
 .features{
 grid-template-columns:repeat(2,1fr);
 }
-
 .gallery{
 grid-template-columns:repeat(2,1fr);
 }
-
 .product img{
 height:260px;
 }
-
 }
 
 @media(max-width:500px){
-
 .products{
 grid-template-columns:1fr;
 }
-
 .form-grid{
 grid-template-columns:1fr;
 }
-
 .full{
 grid-column:auto;
 }
-
 .hero{
 min-height:300px;
 }
-
 .hero h2{
 letter-spacing:3px;
 }
-
-nav{
-gap:12px;
-}
-
 .brand h1{
 font-size:30px;
 }
-
 }
 </style>
 </head>
@@ -517,8 +407,21 @@ DARVIN PREMIUM STREETWEAR • WEAR THE REBEL
 <a href="#collection" class="btn">EXPLORE COLLECTION</a>
 </section>
 
-<section class="features">
+<section class="darvin-promo">
+<h2>DARVIN — WEAR THE REBEL</h2>
+<p>Not just a T-shirt. It's your identity.</p>
 
+<video controls autoplay muted loop playsinline>
+<source src="DARVIN-promo.mp4" type="video/mp4">
+Your browser does not support video.
+</video>
+
+<a href="#collection" class="btn">
+EXPLORE DARVIN COLLECTION
+</a>
+</section>
+
+<section class="features">
 <div class="feature">
 <b>PREMIUM QUALITY</b>
 <p>Premium Black T-Shirts</p>
@@ -538,7 +441,6 @@ DARVIN PREMIUM STREETWEAR • WEAR THE REBEL
 <b>CUSTOMER SUPPORT</b>
 <p>Direct WhatsApp Support</p>
 </div>
-
 </section>
 
 <section class="section" id="collection">
@@ -551,16 +453,10 @@ DARVIN PREMIUM STREETWEAR • WEAR THE REBEL
 <div class="products">
 
 <article class="product">
-
-<img id="img1"
-src="darvin-model-front-new.jpg"
-alt="DARVIN Premium Oversized Black T-Shirt"
-onerror="imageError(this)">
+<img id="img1" src="darvin-model-front-new.jpg" alt="DARVIN Oversized T-Shirt">
 
 <h3>PREMIUM OVERSIZED T-SHIRT</h3>
-
 <p>Premium black oversized streetwear.</p>
-
 <div class="price">₹500</div>
 
 <select id="size1">
@@ -571,36 +467,21 @@ onerror="imageError(this)">
 </select>
 
 <div class="action">
-
-<button class="add"
-onclick="addToBag('Premium Oversized T-Shirt',500,'size1')">
+<button class="add" onclick="addToBag('Premium Oversized T-Shirt','size1')">
 ADD TO BAG
 </button>
 
-<button class="order"
-onclick="selectProduct('Premium Oversized T-Shirt','size1')">
+<button class="order" onclick="selectProduct('Premium Oversized T-Shirt','size1')">
 ORDER NOW
 </button>
-
-<button class="share"
-onclick="shareProduct('Premium Oversized T-Shirt')">
-SHARE PRODUCT
-</button>
-
 </div>
 </article>
 
 <article class="product">
-
-<img id="img2"
-src="darvin-product-hanging-new.jpg"
-alt="DARVIN Black Gym T-Shirt"
-onerror="imageError(this)">
+<img id="img2" src="darvin-product-hanging-new.jpg" alt="DARVIN Gym T-Shirt">
 
 <h3>BLACK GYM T-SHIRT</h3>
-
 <p>Bold black gym collection.</p>
-
 <div class="price">₹500</div>
 
 <select id="size2">
@@ -611,36 +492,21 @@ onerror="imageError(this)">
 </select>
 
 <div class="action">
-
-<button class="add"
-onclick="addToBag('Black Gym T-Shirt',500,'size2')">
+<button class="add" onclick="addToBag('Black Gym T-Shirt','size2')">
 ADD TO BAG
 </button>
 
-<button class="order"
-onclick="selectProduct('Black Gym T-Shirt','size2')">
+<button class="order" onclick="selectProduct('Black Gym T-Shirt','size2')">
 ORDER NOW
 </button>
-
-<button class="share"
-onclick="shareProduct('Black Gym T-Shirt')">
-SHARE PRODUCT
-</button>
-
 </div>
 </article>
 
 <article class="product">
-
-<img id="img3"
-src="darvin-print-closeup-new.jpg"
-alt="DARVIN Classic Black T-Shirt"
-onerror="imageError(this)">
+<img id="img3" src="darvin-print-closeup-new.jpg" alt="DARVIN Classic T-Shirt">
 
 <h3>CLASSIC BLACK T-SHIRT</h3>
-
 <p>Minimal everyday black style.</p>
-
 <div class="price">₹500</div>
 
 <select id="size3">
@@ -651,84 +517,41 @@ onerror="imageError(this)">
 </select>
 
 <div class="action">
-
-<button class="add"
-onclick="addToBag('Classic Black T-Shirt',500,'size3')">
+<button class="add" onclick="addToBag('Classic Black T-Shirt','size3')">
 ADD TO BAG
 </button>
 
-<button class="order"
-onclick="selectProduct('Classic Black T-Shirt','size3')">
+<button class="order" onclick="selectProduct('Classic Black T-Shirt','size3')">
 ORDER NOW
 </button>
-
-<button class="share"
-onclick="shareProduct('Classic Black T-Shirt')">
-SHARE PRODUCT
-</button>
-
 </div>
 </article>
 
 </div>
-
 </section>
 
 <section class="section" id="gallery">
-
 <div class="heading">
 <h2>DARVIN GALLERY</h2>
 <p>Our Brand • Our Identity</p>
 </div>
 
 <div class="gallery">
-
-<img id="gallery1"
-src="darvin-hero.jpg"
-alt="DARVIN campaign">
-
-<img id="gallery2"
-src="darvin-tee-hanging.jpg"
-alt="DARVIN hanging T-shirt">
-
-<img id="gallery3"
-src="darvin-model.jpg"
-alt="DARVIN model">
-
-<img id="gallery4"
-src="darvin-logo-detail.jpg"
-alt="DARVIN silver logo">
-
-<img id="gallery5"
-src="darvin-model-front-new.jpg"
-alt="DARVIN front design">
-
-<img id="gallery6"
-src="darvin-campaign-banner.jpg"
-alt="DARVIN campaign banner">
-
-<img id="gallery7"
-src="darvin-product-hanging-new.jpg"
-alt="DARVIN product">
-
-<img id="gallery8"
-src="darvin-print-closeup-new.jpg"
-alt="DARVIN print closeup">
-
+<img id="gallery1" src="darvin-hero.jpg" alt="DARVIN Campaign">
+<img id="gallery2" src="darvin-tee-hanging.jpg" alt="DARVIN Hanging T-Shirt">
+<img id="gallery3" src="darvin-model.jpg" alt="DARVIN Model">
+<img id="gallery4" src="darvin-logo-detail.jpg" alt="DARVIN Logo">
+<img id="gallery5" src="darvin-model-front-new.jpg" alt="DARVIN Front Design">
+<img id="gallery6" src="darvin-campaign-banner.jpg" alt="DARVIN Campaign Banner">
+<img id="gallery7" src="darvin-product-hanging-new.jpg" alt="DARVIN Product">
+<img id="gallery8" src="darvin-print-closeup-new.jpg" alt="DARVIN Print">
 </div>
-
 </section>
 
 <section class="promo">
-
 <h2>BUILT FOR THE REBELS.</h2>
-
-<p style="margin-top:15px">
-WEAR THE REBEL.
-</p>
-
+<p style="margin-top:15px">WEAR THE REBEL.</p>
 <a href="#order" class="btn">ORDER YOUR T-SHIRT</a>
-
 </section>
 
 <section class="section" id="order">
@@ -739,7 +562,6 @@ WEAR THE REBEL.
 </div>
 
 <div class="form-panel">
-
 <h3>ORDER DETAILS</h3>
 
 <form id="orderForm">
@@ -747,628 +569,253 @@ WEAR THE REBEL.
 <div class="form-grid">
 
 <div class="full">
-
 <label>Customer Name *</label>
-
-<input id="customerName"
-type="text"
-required
-autocomplete="name"
-placeholder="Enter your full name">
-
+<input id="customerName" required placeholder="Enter your full name">
 </div>
 
 <div>
-
 <label>Mobile Number *</label>
-
-<input id="customerPhone"
-type="tel"
-inputmode="numeric"
-pattern="[0-9]{10}"
-maxlength="10"
-required
-placeholder="10 digit mobile number">
-
+<input id="customerPhone" type="tel" pattern="[0-9]{10}" maxlength="10" required placeholder="10 digit mobile">
 </div>
 
 <div>
-
 <label>Select Product *</label>
-
 <select id="product" required>
-
 <option value="">Choose T-Shirt</option>
-
 <option>Premium Oversized T-Shirt</option>
-
 <option>Black Gym T-Shirt</option>
-
 <option>Classic Black T-Shirt</option>
-
 </select>
-
 </div>
 
 <div>
-
 <label>Size *</label>
-
 <select id="size" required>
-
 <option value="">Choose Size</option>
-
 <option value="M">Medium (M)</option>
-
 <option value="L">Large (L)</option>
-
 <option value="XXL">Double XL (XXL)</option>
-
 </select>
-
 </div>
 
 <div>
-
 <label>Quantity *</label>
-
-<input id="quantity"
-type="number"
-min="1"
-max="10"
-value="1"
-required>
-
+<input id="quantity" type="number" min="1" max="10" value="1" required>
 </div>
 
 <div class="full">
-
 <label>Full Delivery Address *</label>
-
-<textarea id="address"
-required
-placeholder="House number, street, area"></textarea>
-
+<textarea id="address" required placeholder="House number, street, area"></textarea>
 </div>
 
 <div>
-
 <label>City *</label>
-
-<input id="city"
-required
-placeholder="City">
-
+<input id="city" required placeholder="City">
 </div>
 
 <div>
-
 <label>State *</label>
-
-<input id="state"
-required
-placeholder="State">
-
+<input id="state" required placeholder="State">
 </div>
 
 <div>
-
 <label>PIN Code *</label>
-
-<input id="pin"
-inputmode="numeric"
-pattern="[0-9]{6}"
-maxlength="6"
-required
-placeholder="6 digit PIN">
-
+<input id="pin" pattern="[0-9]{6}" maxlength="6" required placeholder="6 digit PIN">
 </div>
 
 <div>
-
 <label>Payment Method *</label>
-
 <select id="payment" required>
-
 <option value="">Choose Payment</option>
-
-<option value="Google Pay">Google Pay</option>
-
-<option value="PhonePe">PhonePe</option>
-
-<option value="Credit Card">Credit Card</option>
-
-<option value="Cash on Delivery">Cash on Delivery (COD)</option>
-
+<option>Google Pay</option>
+<option>PhonePe</option>
+<option>Credit Card</option>
+<option>Cash on Delivery</option>
 </select>
-
 </div>
 
 <div class="full">
-
 <label>Additional Note</label>
-
-<textarea id="notes"
-placeholder="Delivery instructions or extra details"></textarea>
-
+<textarea id="notes" placeholder="Extra details"></textarea>
 </div>
 
 </div>
 
 <div class="total-box">
-
 <p>Product Price: <strong id="productTotal">₹500</strong></p>
-
-<p>Delivery Charge: <strong>₹0</strong></p>
-
+<p>Delivery Charge: ₹0</p>
 <p>COD Charge: <strong id="codCharge">₹0</strong></p>
-
 <p>Grand Total: <strong id="grandTotal">₹500</strong></p>
-
 </div>
 
 <button class="submit-order" type="submit">
-
 SUBMIT ORDER ON WHATSAPP
-
 </button>
 
 </form>
 
 <div class="payment-info">
-
 <h3>PAYMENT OPTIONS</h3>
-
 <p>Google Pay • PhonePe • Credit Card • Cash on Delivery</p>
-
 <p>COD Extra Charge: ₹20</p>
-
 <p>Delivery Estimate: 7–10 Days</p>
-
 <p>Return Policy: Exchange Only — No Refund</p>
-
-<p>Online payment instructions will be shared by DARVIN after order confirmation.</p>
-
+<p>Online payment instructions will be shared after confirmation.</p>
 </div>
 
 </div>
-
-</section>
-
-<section class="section" id="my-orders">
-
-<div class="heading">
-
-<h2>MY ORDERS</h2>
-
-<p>For order confirmation, tracking and delivery support.</p>
-
-</div>
-
-<div style="text-align:center">
-
-<a class="btn"
-href="https://wa.me/919798674867?text=Hello%20DARVIN%2C%20I%20want%20to%20check%20my%20order."
-target="_blank">
-
-CHECK MY ORDER ON WHATSAPP
-
-</a>
-
-</div>
-
 </section>
 
 <section class="section">
-
 <div class="heading">
-
-<h2>CUSTOMER SERVICE</h2>
-
-<p>We are here to help you.</p>
-
+<h2>MY ORDERS</h2>
+<p>Order tracking and delivery support.</p>
 </div>
 
-<div style="text-align:center;line-height:2">
-
-<p>Order Support</p>
-
-<p>Payment Support</p>
-
-<p>Delivery Support</p>
-
-<p>Size and Product Assistance</p>
-
-<a class="btn"
-href="https://wa.me/919798674867?text=Hello%20DARVIN%20Customer%20Service">
-
-CONTACT CUSTOMER SERVICE
-
+<div style="text-align:center">
+<a class="btn" href="https://wa.me/919798674867" target="_blank">
+CHECK MY ORDER ON WHATSAPP
 </a>
-
 </div>
-
 </section>
 
 <section class="contact" id="contact">
 
 <h2>CONTACT DARVIN</h2>
-
 <p>WEAR THE REBEL.</p>
-
 <p>WhatsApp: 9798674867</p>
-
 <p>Instagram: @darv.inofficial</p>
 
-<a class="contact-btn"
-href="https://wa.me/919798674867"
-target="_blank">
-
+<a class="contact-btn" href="https://wa.me/919798674867" target="_blank">
 DIRECT WHATSAPP
-
 </a>
 
-<a class="contact-btn"
-href="https://www.instagram.com/darv.inofficial/"
-target="_blank">
-
+<a class="contact-btn" href="https://www.instagram.com/darv.inofficial/" target="_blank">
 FOLLOW ON INSTAGRAM
-
 </a>
 
-<a class="contact-btn"
-href="mailto:YOUR_EMAIL@gmail.com">
-
-EMAIL DARVIN
-
-</a>
-
-<a class="contact-btn"
-href="https://ixmuzd-q8.myshopify.com/products/darvin-premium-oversized-black-t-shirt"
-target="_blank">
-
+<a class="contact-btn" href="https://ixmuzd-q8.myshopify.com/products/darvin-premium-oversized-black-t-shirt" target="_blank">
 SHOP ON SHOPIFY
-
 </a>
-
-</section>
-
-<section class="section" id="imageManager">
-
-<div class="heading">
-
-<h2>IMAGE MANAGER</h2>
-
-<p>Change your T-shirt photos anytime from your mobile.</p>
-
-</div>
-
-<div class="image-manager">
-
-<h3>CHANGE PRODUCT IMAGES</h3>
-
-<p>
-Select a new image from your mobile gallery.
-The selected image will be saved in this browser.
-For public website updates, upload the image to GitHub too.
-</p>
-
-<label>Change Premium Oversized T-Shirt Image</label>
-
-<input type="file"
-accept="image/*"
-onchange="changeImage(event,'img1')">
-
-<label>Change Gym T-Shirt Image</label>
-
-<input type="file"
-accept="image/*"
-onchange="changeImage(event,'img2')">
-
-<label>Change Classic T-Shirt Image</label>
-
-<input type="file"
-accept="image/*"
-onchange="changeImage(event,'img3')">
-
-<label>Change Gallery Image 1</label>
-
-<input type="file"
-accept="image/*"
-onchange="changeImage(event,'gallery1')">
-
-<label>Change Gallery Image 2</label>
-
-<input type="file"
-accept="image/*"
-onchange="changeImage(event,'gallery2')">
-
-<label>Change Gallery Image 3</label>
-
-<input type="file"
-accept="image/*"
-onchange="changeImage(event,'gallery3')">
-
-<label>Change Gallery Image 4</label>
-
-<input type="file"
-accept="image/*"
-onchange="changeImage(event,'gallery4')">
-
-<label>Change Gallery Image 5</label>
-
-<input type="file"
-accept="image/*"
-onchange="changeImage(event,'gallery5')">
-
-<label>Change Gallery Image 6</label>
-
-<input type="file"
-accept="image/*"
-onchange="changeImage(event,'gallery6')">
-
-<label>Change Gallery Image 7</label>
-
-<input type="file"
-accept="image/*"
-onchange="changeImage(event,'gallery7')">
-
-<label>Change Gallery Image 8</label>
-
-<input type="file"
-accept="image/*"
-onchange="changeImage(event,'gallery8')">
-
-<button onclick="resetImages()">
-
-RESET ORIGINAL IMAGES
-
-</button>
-
-</div>
 
 </section>
 
 <footer>
-
 <strong>DARVIN</strong>
-
 <p>WEAR THE REBEL.</p>
-
 <p>Premium Black Streetwear</p>
-
 <p>© <span id="year"></span> DARVIN. All Rights Reserved.</p>
-
 </footer>
 
 <script>
-
 "use strict";
 
-const OWNER_WHATSAPP = "919798674867";
+const OWNER_WHATSAPP="919798674867";
+const PRODUCT_PRICE=500;
+const COD_EXTRA=20;
 
-const PRODUCT_PRICE = 500;
+const productSelect=document.getElementById("product");
+const quantityInput=document.getElementById("quantity");
+const paymentSelect=document.getElementById("payment");
 
-const COD_EXTRA = 20;
+document.getElementById("year").textContent=new Date().getFullYear();
 
-const productSelect = document.getElementById("product");
-
-const quantityInput = document.getElementById("quantity");
-
-const paymentSelect = document.getElementById("payment");
-
-document.getElementById("year").textContent =
-new Date().getFullYear();
-
-function imageError(img){
-
-img.style.background = "#ddd";
-
-img.alt = "Image unavailable. Please replace image using Image Manager.";
-
-}
+let cart=[];
 
 function selectProduct(name,sizeId){
-
-productSelect.value = name;
-
-document.getElementById("order").scrollIntoView({
-behavior:"smooth"
-});
-
-if(sizeId){
-
-const size = document.getElementById(sizeId).value;
-
-document.getElementById("size").value = size;
-
-}
-
+productSelect.value=name;
+document.getElementById("order").scrollIntoView({behavior:"smooth"});
+document.getElementById("size").value=document.getElementById(sizeId).value;
 updateTotal();
-
 }
 
-let cart = [];
-
-function addToBag(name,price,sizeId){
-
-const size = document.getElementById(sizeId).value;
+function addToBag(name,sizeId){
+const size=document.getElementById(sizeId).value;
 
 if(!size){
-
 alert("Please select your T-shirt size.");
-
 return;
-
 }
 
-cart.push({
+cart.push({name:name,size:size});
 
-name:name,
-
-price:price,
-
-size:size
-
-});
-
-alert(name + " added to your bag.\nSize: " + size + "\nQuantity: " + cart.length);
-
-}
-
-function shareProduct(name){
-
-const message =
-"Check out " + name +
-" from DARVIN — WEAR THE REBEL.\n" +
-"Price: ₹500\n" +
-"Shop here: " + window.location.href;
-
-if(navigator.share){
-
-navigator.share({
-
-title:"DARVIN — " + name,
-
-text:message,
-
-url:window.location.href
-
-}).catch(()=>{});
-
-}else{
-
-window.open(
-"https://wa.me/?text=" + encodeURIComponent(message),
-"_blank"
-);
-
-}
-
+alert(name+" added to your bag.\nSize: "+size+"\nItems: "+cart.length);
 }
 
 function updateTotal(){
 
-const quantity = Math.max(
-1,
-Number(quantityInput.value) || 1
-);
+const quantity=Math.min(10,Math.max(1,Number(quantityInput.value)||1));
 
-const subtotal = PRODUCT_PRICE * quantity;
+const subtotal=PRODUCT_PRICE*quantity;
 
-const cod = paymentSelect.value === "Cash on Delivery"
-? COD_EXTRA
-: 0;
+const cod=paymentSelect.value==="Cash on Delivery"?COD_EXTRA:0;
 
-document.getElementById("productTotal").textContent =
-"₹" + subtotal;
-
-document.getElementById("codCharge").textContent =
-"₹" + cod;
-
-document.getElementById("grandTotal").textContent =
-"₹" + (subtotal + cod);
+document.getElementById("productTotal").textContent="₹"+subtotal;
+document.getElementById("codCharge").textContent="₹"+cod;
+document.getElementById("grandTotal").textContent="₹"+(subtotal+cod);
 
 }
 
 quantityInput.addEventListener("input",updateTotal);
-
 paymentSelect.addEventListener("change",updateTotal);
-
 productSelect.addEventListener("change",updateTotal);
 
-document.getElementById("orderForm")
-.addEventListener("submit",function(event){
+document.getElementById("orderForm").addEventListener("submit",function(event){
 
 event.preventDefault();
 
-const name =
-document.getElementById("customerName").value.trim();
-
-const phone =
-document.getElementById("customerPhone").value.trim();
-
-const product =
-document.getElementById("product").value;
-
-const size =
-document.getElementById("size").value;
-
-const quantity =
-Number(document.getElementById("quantity").value);
-
-const address =
-document.getElementById("address").value.trim();
-
-const city =
-document.getElementById("city").value.trim();
-
-const state =
-document.getElementById("state").value.trim();
-
-const pin =
-document.getElementById("pin").value.trim();
-
-const payment =
-document.getElementById("payment").value;
-
-const notes =
-document.getElementById("notes").value.trim();
+const name=document.getElementById("customerName").value.trim();
+const phone=document.getElementById("customerPhone").value.trim();
+const product=document.getElementById("product").value;
+const size=document.getElementById("size").value;
+const quantity=Number(quantityInput.value);
+const address=document.getElementById("address").value.trim();
+const city=document.getElementById("city").value.trim();
+const state=document.getElementById("state").value.trim();
+const pin=document.getElementById("pin").value.trim();
+const payment=paymentSelect.value;
+const notes=document.getElementById("notes").value.trim();
 
 if(!/^[0-9]{10}$/.test(phone)){
-
 alert("Enter valid 10 digit mobile number.");
-
 return;
-
 }
 
 if(!/^[0-9]{6}$/.test(pin)){
-
 alert("Enter valid 6 digit PIN code.");
-
 return;
-
 }
 
-if(quantity < 1 || quantity > 10){
+const subtotal=PRODUCT_PRICE*quantity;
+const cod=payment==="Cash on Delivery"?COD_EXTRA:0;
+const total=subtotal+cod;
 
-alert("Quantity must be between 1 and 10.");
+const message=
+"DARVIN NEW ORDER\n\n"+
+"Customer Name: "+name+"\n"+
+"Customer Mobile: "+phone+"\n\n"+
+"Product: "+product+"\n"+
+"Size: "+size+"\n"+
+"Quantity: "+quantity+"\n\n"+
+"Address: "+address+"\n"+
+"City: "+city+"\n"+
+"State: "+state+"\n"+
+"PIN: "+pin+"\n\n"+
+"Payment: "+payment+"\n"+
+"Product Amount: ₹"+subtotal+"\n"+
+"Delivery Charge: ₹0\n"+
+"COD Charge: ₹"+cod+"\n"+
+"TOTAL AMOUNT: ₹"+total+"\n\n"+
+"Additional Note: "+notes;
 
-return;
+const whatsappURL=
+"https://wa.me/"+OWNER_WHATSAPP+"?text="+encodeURIComponent(message);
 
-}
+window.open(whatsappURL,"_blank");
 
-const subtotal = PRODUCT_PRICE * quantity;
+});
 
-const cod = payment === "Cash on Delivery"
-? COD_EXTRA
-: 0;
+</script>
 
-const total = subtotal + cod;
-
-const message =
-
-"DARVIN NEW ORDER\n\n" +
-
-"Customer Name: " + name + "\n" +
-
-"Customer Mobile: " + phone + "\n\n" +
-
-"Product: " + product + "\n" +
-
-"Size: " + size + "\n" +
-
-"Quantity: " + quantity + "\n\n" +
-
-"Delivery Address: " + address + "\n" +
-
-"City: " + city + "\n" +
-
-"State: " + state + "\n" +
-
-"PIN Code: " + pin + "\n\n" +
-
-"Payment Method: " + payment + "\n\n" +
-
-"Product Amount: ₹" + subtotal
+</body>
+</html>
