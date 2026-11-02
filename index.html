@@ -3,696 +3,307 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080808">
-<title>DARVIN — WEAR THE REBEL</title>
-<meta name="description" content="DARVIN premium black streetwear. Wear the Rebel.">
-
+<title>DARVIN | WEAR THE REBEL</title>
+<meta name="description" content="DARVIN Premium Black Streetwear">
 <style>
-:root{
---black:#080808;
---panel:#15130d;
---gold:#e8c65a;
---gold2:#f6e6a4;
---white:#f7f4e9;
---muted:#b9b3a0;
---line:#4b4022;
-}
-
 *{box-sizing:border-box}
-
-html{scroll-behavior:smooth}
-
-body{
-margin:0;
-background:var(--black);
-color:var(--white);
-font-family:Arial,Helvetica,sans-serif;
+body{margin:0;background:#080808;color:#fff;font-family:Arial,sans-serif}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+.top{text-align:center;padding:20px;background:linear-gradient(120deg,#111,#333,#080808)}
+.logo{font-size:55px;font-weight:900;letter-spacing:8px}
+.tag{letter-spacing:5px;font-size:12px}
+.promo{background:#ddd;color:#111;text-align:center;padding:10px;font-size:11px;font-weight:bold}
+header{position:sticky;top:0;background:#090909;z-index:10;padding:12px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #333}
+.brand{font-size:20px;font-weight:bold;letter-spacing:3px}
+nav{display:flex;gap:5px;flex-wrap:wrap}
+nav button{background:transparent;color:#fff;border:1px solid transparent;padding:10px;font-size:12px;font-weight:bold}
+nav button:hover,nav button.active{background:#eee;color:#111}
+.page{display:none;min-height:60vh}
+.page.active{display:block}
+.hero{text-align:center;padding:70px 15px;background:radial-gradient(ellipse,#333,#080808)}
+.hero h1{font-size:clamp(45px,10vw,85px);letter-spacing:8px;margin:0}
+.hero p{letter-spacing:5px}
+.btn{background:#eee;color:#111;border:0;padding:14px 22px;font-weight:bold;cursor:pointer}
+.wrap{max-width:1150px;margin:auto;padding:40px 4%}
+.title{text-align:center;letter-spacing:4px}
+.subtitle{text-align:center;color:#aaa;font-size:13px;margin-bottom:25px}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.product{background:#151515;border:1px solid #333}
+.product img{width:100%;height:330px;object-fit:contain;background:#101010;display:block}
+.info{padding:15px}
+.info h3{font-size:16px}
+.price{font-size:21px;font-weight:bold}
+.info p{font-size:13px;color:#aaa}
+.actions{display:flex;gap:8px;padding:0 15px 15px}
+.actions button{flex:1;padding:12px;font-size:11px;font-weight:bold;cursor:pointer}
+.order-now{background:#eee;color:#111;border:0}
+.share{background:transparent;color:#fff;border:1px solid #555}
+.panel{max-width:750px;margin:auto;background:#151515;border:1px solid #333;padding:22px}
+.panel h2{text-align:center}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 15px}
+.full{grid-column:1/-1}
+label{display:block;margin:14px 0 7px;font-size:13px}
+input,select,textarea{width:100%;padding:12px;background:#080808;color:#fff;border:1px solid #444}
+textarea{min-height:85px}
+.total{margin-top:20px;padding:15px;background:#080808;line-height:2;border:1px solid #333}
+.total strong{color:#eee}
+.submit{width:100%;padding:15px;margin-top:18px;background:#eee;color:#111;border:0;font-weight:900;cursor:pointer}
+.hint{text-align:center;color:#aaa;font-size:12px}
+.empty{text-align:center;padding:30px;border:1px dashed #555;color:#aaa}
+.record{padding:15px;border:1px solid #444;margin-top:12px;line-height:1.8;overflow-wrap:anywhere}
+.contacts{display:grid;grid-template-columns:1fr 1fr;gap:15px;max-width:750px;margin:auto}
+.contact{padding:20px;background:#151515;border:1px solid #333;text-align:center;overflow-wrap:anywhere}
+.contact a{text-decoration:underline}
+.policy{text-align:center;color:#aaa;font-size:12px;line-height:1.8;margin:25px auto}
+footer{text-align:center;padding:25px;border-top:1px solid #333;color:#aaa;font-size:12px;line-height:2}
+@media(max-width:700px){
+header{display:block;text-align:center}
+.brand{margin-bottom:10px}
+nav{justify-content:center}
+.products{grid-template-columns:1fr 1fr}
+.product img{height:260px}
 }
-
-a{color:inherit;text-decoration:none}
-button{cursor:pointer;font:inherit}
-
-/* BRAND LOGO */
-
-.brand-top{
-padding:22px 12px 15px;
-text-align:center;
-background:radial-gradient(ellipse at center,#28200b 0%,#080808 72%);
-border-bottom:1px solid var(--line);
-}
-
-.brand-logo{
-display:inline-block;
-font-family:Georgia,serif;
-font-size:clamp(42px,10vw,76px);
-font-weight:900;
-letter-spacing:9px;
-color:var(--gold2);
-text-shadow:0 2px 0 #7e621b,0 0 24px #b58a294d;
-}
-
-.brand-tag{
-margin:5px 0 0;
-color:var(--white);
-font-size:11px;
-letter-spacing:5px;
-}
-
-/* ADVERTISEMENT */
-
-.ad-bar{
-overflow:hidden;
-background:var(--gold);
-color:#100e08;
-padding:10px 0;
-font-size:11px;
-font-weight:900;
-letter-spacing:2px;
-white-space:nowrap;
-}
-
-.ad-track{
-display:flex;
-width:max-content;
-gap:48px;
-animation:scroll 22s linear infinite;
-}
-
-@keyframes scroll{
-to{transform:translateX(-50%)}
-}
-
-/* HEADER */
-
-header{
-position:sticky;
-top:0;
-z-index:5;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:14px 5%;
-background:#090909ed;
-border-bottom:1px solid #3b321b;
-backdrop-filter:blur(8px);
-}
-
-.small-logo{
-font-family:Georgia,serif;
-font-size:22px;
-font-weight:bold;
-letter-spacing:3px;
-color:var(--gold);
-}
-
-nav{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-font-size:11px;
-letter-spacing:1px;
-}
-
-nav a:hover{color:var(--gold)}
-
-/* HERO */
-
-.hero{
-text-align:center;
-padding:85px 18px 90px;
-background:radial-gradient(
-ellipse at 50% 20%,
-#493711 0%,
-#171207 35%,
-#080808 75%
-);
-}
-
-.hero h1{
-font-family:Georgia,serif;
-font-size:clamp(45px,10vw,88px);
-letter-spacing:8px;
-margin:0;
-color:var(--gold2);
-}
-
-.hero p{
-letter-spacing:6px;
-font-size:14px;
-margin:12px 0;
-color:#fff;
-}
-
-.sub{
-color:var(--muted);
-font-size:11px;
-letter-spacing:3px;
-margin:20px 0 28px;
-}
-
-.btn{
-display:inline-block;
-background:var(--gold);
-color:#100e08;
-border:0;
-padding:14px 24px;
-font-size:12px;
-font-weight:900;
-letter-spacing:1px;
-}
-
-.btn:hover,.order-btn:hover{
-background:var(--gold2);
-}
-
-/* COLLECTION */
-
-.section{
-padding:55px 5%;
-max-width:1200px;
-margin:auto;
-}
-
-.section-title{
-text-align:center;
-color:var(--gold2);
-font-family:Georgia,serif;
-letter-spacing:4px;
-font-size:25px;
-margin:0 0 32px;
-}
-
-.products{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-gap:22px;
-}
-
-.product{
-background:var(--panel);
-border:1px solid var(--line);
-padding-bottom:18px;
-}
-
-.product-image{
-background:#100f0c;
-}
-
-.product-image img{
-display:block;
-width:100%;
-height:320px;
-object-fit:contain;
-background:#101010;
-}
-
-.product-info{padding:17px}
-
-.product h3{
-font-size:16px;
-margin:0 0 9px;
-}
-
-.price{
-color:var(--gold);
-font-size:21px;
-font-weight:bold;
-}
-
-.product p{
-color:var(--muted);
-font-size:12px;
-line-height:1.6;
-}
-
-.share-btn,.order-product-btn{
-display:block;
-width:calc(100% - 34px);
-margin:10px 17px 0;
-padding:12px;
-border:1px solid var(--gold);
-background:transparent;
-color:var(--gold2);
-font-weight:bold;
-}
-
-.order-product-btn{
-background:var(--gold);
-color:#100e08;
-border:0;
-}
-
-/* ORDER FORM */
-
-.order-box{
-max-width:680px;
-margin:auto;
-background:var(--panel);
-border:1px solid var(--line);
-padding:clamp(18px,4vw,30px);
-}
-
-.order-box h2{
-text-align:center;
-color:var(--gold2);
-letter-spacing:3px;
-}
-
-.order-note{
-text-align:center;
-color:var(--muted);
-font-size:13px;
-line-height:1.6;
-margin-bottom:22px;
-}
-
-label{
-display:block;
-margin:15px 0 7px;
-font-size:13px;
-color:var(--gold2);
-}
-
-input,select,textarea{
-width:100%;
-padding:13px;
-background:#090909;
-color:#fff;
-border:1px solid #66552b;
-font-size:14px;
-border-radius:2px;
-}
-
-textarea{
-min-height:78px;
-resize:vertical;
-}
-
-input:focus,select:focus,textarea:focus{
-outline:1px solid var(--gold);
-}
-
-.total-box{
-background:#0c0b08;
-padding:16px;
-margin-top:20px;
-line-height:2;
-font-size:14px;
-border:1px solid var(--line);
-}
-
-.total-box strong{color:var(--gold2)}
-
-.order-btn{
-width:100%;
-padding:16px;
-margin-top:20px;
-background:var(--gold);
-color:#100e08;
-border:0;
-font-weight:900;
-letter-spacing:1px;
-}
-
-/* PAYMENT */
-
-.payment-info{
-margin-top:20px;
-padding:18px;
-background:#100f0b;
-border:1px solid var(--line);
-text-align:center;
-line-height:1.8;
-}
-
-.payment-info p,.details{
-color:var(--muted);
-font-size:13px;
-}
-
-/* CONTACT */
-
-.details{
-text-align:center;
-line-height:2.1;
-}
-
-.contact-btn{
-display:inline-block;
-margin:8px;
-padding:12px 20px;
-background:var(--gold);
-color:#100e08;
-font-weight:bold;
-font-size:12px;
-}
-
-/* FOOTER */
-
-footer{
-border-top:1px solid var(--line);
-padding:30px 15px;
-text-align:center;
-color:var(--muted);
-font-size:12px;
-line-height:2;
-}
-
-footer strong{
-color:var(--gold2);
-letter-spacing:4px;
-}
-
-/* MOBILE */
-
-@media(max-width:600px){
-
-header{
-display:block;
-text-align:center;
-}
-
-nav{
-justify-content:center;
-margin-top:12px;
-gap:13px;
-}
-
-.hero{padding:65px 15px}
-
-.product-image img{height:280px}
-
+@media(max-width:500px){
+.products,.grid,.contacts{grid-template-columns:1fr}
+.full{grid-column:auto}
+.product img{height:300px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- DARVIN LOGO -->
-
-<div class="brand-top" id="home">
-
-<div class="brand-logo">DARVIN</div>
-
-<div class="brand-tag">
-WEAR THE REBEL.
+<div class="top" id="top">
+<div class="logo">DARVIN</div>
+<div class="tag">WEAR THE REBEL.</div>
 </div>
 
-</div>
-
-<!-- ADVERTISEMENT -->
-
-<div class="ad-bar">
-
-<div class="ad-track">
-
-<span>DARVIN PREMIUM STREETWEAR</span>
-<span>WEAR THE REBEL</span>
-<span>BLACK IS THE NEW STYLE</span>
-
-<span>DARVIN PREMIUM STREETWEAR</span>
-<span>WEAR THE REBEL</span>
-<span>BLACK IS THE NEW STYLE</span>
-
-</div>
-
-</div>
-
-<!-- HEADER -->
+<div class="promo">DARVIN PREMIUM STREETWEAR • BLACK T-SHIRTS • WEAR THE REBEL</div>
 
 <header>
-
-<a class="small-logo" href="#home">DARVIN</a>
-
+<div class="brand">DARVIN</div>
 <nav>
-<a href="#home">HOME</a>
-<a href="#collection">COLLECTION</a>
-<a href="#order">ORDER</a>
-<a href="#contact">CONTACT</a>
+<button class="active" data-page="home" onclick="showPage('home')">HOME</button>
+<button data-page="collection" onclick="showPage('collection')">COLLECTION</button>
+<button data-page="order" onclick="showPage('order')">ORDER</button>
+<button data-page="orders" onclick="showPage('orders')">MY ORDERS</button>
+<button data-page="contact" onclick="showPage('contact')">CONTACT</button>
 </nav>
-
 </header>
 
-<!-- HERO -->
+<main>
 
-<section class="hero">
-
+<!-- HOME -->
+<section id="home" class="page active">
+<div class="hero">
 <h1>DARVIN</h1>
-
 <p>WEAR THE REBEL.</p>
-
-<div class="sub">
-PREMIUM BLACK STREETWEAR
+<p style="font-size:12px;color:#aaa">PREMIUM BLACK STREETWEAR</p>
+<button class="btn" onclick="showPage('collection')">EXPLORE COLLECTION</button>
 </div>
-
-<a href="#collection" class="btn">
-EXPLORE COLLECTION
-</a>
-
-</section>
-
-<!-- OFFER -->
-
-<section id="offer"
-style="display:none;padding:20px;text-align:center;background:#171207">
-
-<h2 id="offerText"></h2>
-
+<div class="wrap">
+<h2 class="title">WELCOME TO DARVIN</h2>
+<p class="subtitle">Simple. Bold. Black.</p>
+<div class="empty">Premium Black T-Shirts | ₹500 | Sizes M, L, XXL</div>
+</div>
 </section>
 
 <!-- COLLECTION -->
-
-<section class="section" id="collection">
-
-<h2 class="section-title">
-OUR COLLECTION
-</h2>
+<section id="collection" class="page">
+<div class="wrap">
+<h2 class="title">OUR COLLECTION</h2>
+<p class="subtitle">Premium Black T-Shirts • ₹500</p>
 
 <div class="products">
 
-<!-- PRODUCT 1 -->
-
-<article class="product">
-
-<div class="product-image">
-
-<img src="darvin-model-front-new.jpg"
-alt="DARVIN Oversized Black T-shirt">
-
-</div>
-
-<div class="product-info">
-
+<div class="product">
+<img src="81193.jpg" alt="DARVIN Oversized Black T-Shirt">
+<div class="info">
 <h3>Premium Oversized T-Shirt</h3>
-
 <div class="price">₹500</div>
-
 <p>Premium black oversized streetwear.</p>
-
+</div>
+<div class="actions">
+<button class="share" onclick="shareProduct('Premium Oversized T-Shirt')">SHARE</button>
+<button class="order-now" onclick="chooseProduct('Premium Oversized T-Shirt')">ORDER NOW</button>
+</div>
 </div>
 
-<button class="share-btn"
-onclick="shareProduct('Premium Oversized T-Shirt')">
-
-SHARE PRODUCT
-
-</button>
-
-<button class="order-product-btn"
-onclick="selectProduct('Premium Oversized T-Shirt')">
-
-ORDER NOW
-
-</button>
-
-</article>
-
-<!-- PRODUCT 2 -->
-
-<article class="product">
-
-<div class="product-image">
-
-<img src="darvin-product-hanging-new.jpg"
-alt="DARVIN Gym Black T-shirt">
-
-</div>
-
-<div class="product-info">
-
+<div class="product">
+<img src="81194.jpg" alt="DARVIN Gym T-Shirt">
+<div class="info">
 <h3>Black Gym T-Shirt</h3>
-
 <div class="price">₹500</div>
-
-<p>Simple and bold gym collection.</p>
-
+<p>Bold black gym collection.</p>
+</div>
+<div class="actions">
+<button class="share" onclick="shareProduct('Black Gym T-Shirt')">SHARE</button>
+<button class="order-now" onclick="chooseProduct('Black Gym T-Shirt')">ORDER NOW</button>
+</div>
 </div>
 
-<button class="share-btn"
-onclick="shareProduct('Black Gym T-Shirt')">
-
-SHARE PRODUCT
-
-</button>
-
-<button class="order-product-btn"
-onclick="selectProduct('Black Gym T-Shirt')">
-
-ORDER NOW
-
-</button>
-
-</article>
-
-<!-- PRODUCT 3 -->
-
-<article class="product">
-
-<div class="product-image">
-
-<img src="darvin-print-closeup-new.jpg"
-alt="DARVIN Classic Black T-shirt">
-
-</div>
-
-<div class="product-info">
-
+<div class="product">
+<img src="81195.jpg" alt="DARVIN Classic T-Shirt">
+<div class="info">
 <h3>Classic Black T-Shirt</h3>
-
 <div class="price">₹500</div>
-
-<p>Classic black everyday style.</p>
-
+<p>Clean everyday black style.</p>
+</div>
+<div class="actions">
+<button class="share" onclick="shareProduct('Classic Black T-Shirt')">SHARE</button>
+<button class="order-now" onclick="chooseProduct('Classic Black T-Shirt')">ORDER NOW</button>
+</div>
 </div>
 
-<button class="share-btn"
-onclick="shareProduct('Classic Black T-Shirt')">
-
-SH
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080808">
-<title>DARVIN — WEAR THE REBEL</title>
-<meta name="description" content="DARVIN premium black streetwear. Oversized, gym and classic black T-shirts.">
-
-<style>
-:root{
---black:#080808;
---panel:#15130d;
---gold:#e8c65a;
---gold-light:#f6e6a4;
---white:#f7f4e9;
---muted:#b9b3a0;
---line:#4b4022;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--black);color:var(--white);font-family:Arial,Helvetica,sans-serif}
-a{color:inherit;text-decoration:none}
-button{cursor:pointer;font:inherit}
-
-.brand-top{
-text-align:center;padding:22px 12px 15px;
-background:radial-gradient(ellipse at center,#28200b 0%,#080808 72%);
-border-bottom:1px solid var(--line)
-}
-.brand-logo{
-font-family:Georgia,serif;font-size:clamp(42px,10vw,76px);
-font-weight:900;letter-spacing:9px;color:var(--gold-light)
-}
-.brand-tag{margin-top:5px;font-size:11px;letter-spacing:5px}
-
-.ad-bar{overflow:hidden;background:var(--gold);color:#100e08;padding:10px;font-size:11px;font-weight:900;letter-spacing:2px}
-header{
-position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;
-align-items:center;padding:14px 5%;background:#090909ed;border-bottom:1px solid #3b321b
-}
-.small-logo{font-size:22px;font-weight:bold;letter-spacing:3px;color:var(--gold)}
-nav{display:flex;gap:18px;flex-wrap:wrap;font-size:11px}
-nav a:hover{color:var(--gold)}
-
-.hero{text-align:center;padding:78px 18px;background:radial-gradient(ellipse at 50% 20%,#493711 0%,#171207 35%,#080808 75%)}
-.hero h1{font-family:Georgia,serif;font-size:clamp(45px,10vw,88px);letter-spacing:8px;margin:0;color:var(--gold-light)}
-.hero p{letter-spacing:6px;font-size:14px}
-.sub{color:var(--muted);font-size:11px;letter-spacing:3px;margin:20px}
-.btn{display:inline-block;background:var(--gold);color:#100e08;padding:14px 24px;font-size:12px;font-weight:900}
-
-.section{padding:52px 5%;max-width:1200px;margin:auto}
-.section-title{text-align:center;color:var(--gold-light);letter-spacing:4px;font-size:25px;margin-bottom:30px}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
-.product{background:var(--panel);border:1px solid var(--line);padding-bottom:18px}
-.product-image img{display:block;width:100%;height:320px;object-fit:contain;background:#101010}
-.product-info{padding:17px}
-.product h3{font-size:16px}
-.price{color:var(--gold);font-size:21px;font-weight:bold}
-.product p{color:var(--muted);font-size:12px;line-height:1.6}
-.share-btn,.order-product-btn{display:block;width:calc(100% - 34px);margin:10px 17px 0;padding:12px;border:1px solid var(--gold);background:transparent;color:var(--gold-light);font-weight:bold}
-.order-product-btn{background:var(--gold);color:#100e08;border:0}
-
-.order-box{max-width:720px;margin:auto;background:var(--panel);border:1px solid var(--line);padding:25px}
-.order-box h2{text-align:center;color:var(--gold-light)}
-.order-note{text-align:center;color:var(--muted);font-size:13px;line-height:1.6}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 15px}
-.field-full{grid-column:1/-1}
-label{display:block;margin:15px 0 7px;font-size:13px;color:var(--gold-light)}
-input,select,textarea{width:100%;padding:13px;background:#090909;color:white;border:1px solid #66552b;font-size:14px}
-textarea{min-height:85px}
-.total-box{background:#0c0b08;padding:16px;margin-top:20px;line-height:2;border:1px solid var(--line)}
-.total-box strong{color:var(--gold-light)}
-.order-btn{width:100%;padding:16px;margin-top:20px;background:var(--gold);color:#100e08;border:0;font-weight:900}
-.payment-info{margin-top:20px;padding:18px;background:#100f0b;border:1px solid var(--line);text-align:center;line-height:1.8}
-.payment-info p,.details{color:var(--muted);font-size:13px}
-.details{text-align:center;line-height:2.1}
-.contact-btn{display:inline-block;margin:8px;padding:12px 20px;background:var(--gold);color:#100e08;font-weight:bold}
-footer{border-top:1px solid var(--line);padding:30px;text-align:center;color:var(--muted);font-size:12px;line-height:2}
-
-@media(max-width:600px){
-header{display:block;text-align:center}
-nav{justify-content:center;margin-top:12px}
-.hero{padding:62px 15px}
-.product-image img{height:280px}
-.form-grid{grid-template-columns:1fr}
-.field-full{grid-column:auto}
-}
-</style>
-</head>
-
-<body>
-
-<div class="brand-top" id="home">
-<div class="brand-logo">DARVIN</div>
-<div class="brand-tag">WEAR THE REBEL.</div>
 </div>
-
-<div class="ad-bar">
-DARVIN PREMIUM STREETWEAR • WEAR THE REBEL • BLACK IS THE NEW STYLE • DARVIN PREMIUM STREETWEAR
 </div>
-
-<header>
-<a class="small-logo" href="#home">DARVIN</a>
-<nav>
-<a href="#home">HOME</a>
-<a href="#collection">COLLECTION</a>
-<a href="#order">ORDER</a>
-<a href="#contact">CONTACT</a>
-</nav>
-</header>
-
-<section class="hero">
-<h1>DARVIN</h1>
-<p>WEAR THE REBEL.</p>
-<div class="sub">PREMIUM BLACK STREETWEAR</div>
-<a href="#collection" class="btn">EXPLORE COLLECTION</a>
 </section>
 
-<section class="section" id="collection">
-<h2 class="section-title">OUR COLLECTION</h2>
+<!-- ORDER FORM -->
+<section id="order" class="page">
+<div class="wrap">
+<div class="panel">
+<h2>PLACE YOUR ORDER</h2>
+<p class="subtitle">Enter your complete customer and delivery details.</p>
 
-<div class="products">
+<form id="orderForm">
+<div class="grid">
 
-<article class="product">
-<div class="product-image">
-<img
+<div class="full">
+<label>Customer Name *</label>
+<input id="name" required placeholder="Full Name">
+</div>
+
+<div>
+<label>Mobile Number *</label>
+<input id="phone" type="tel" pattern="[0-9]{10}" maxlength="10" required placeholder="10 digit mobile">
+</div>
+
+<div>
+<label>Select Product *</label>
+<select id="product" required>
+<option value="">Choose Product</option>
+<option>Premium Oversized T-Shirt</option>
+<option>Black Gym T-Shirt</option>
+<option>Classic Black T-Shirt</option>
+</select>
+</div>
+
+<div>
+<label>Size *</label>
+<select id="size" required>
+<option value="">Select Size</option>
+<option>M</option>
+<option>L</option>
+<option>XXL</option>
+</select>
+</div>
+
+<div>
+<label>Quantity *</label>
+<input id="quantity" type="number" min="1" max="10" value="1" required>
+</div>
+
+<div class="full">
+<label>Full Address *</label>
+<textarea id="address" required placeholder="House number, street, area, landmark"></textarea>
+</div>
+
+<div>
+<label>City *</label>
+<input id="city" required>
+</div>
+
+<div>
+<label>State *</label>
+<input id="state" required>
+</div>
+
+<div>
+<label>PIN Code *</label>
+<input id="pin" pattern="[0-9]{6}" maxlength="6" required>
+</div>
+
+<div>
+<label>Payment Method *</label>
+<select id="payment" required>
+<option value="">Select Payment</option>
+<option>Cash on Delivery</option>
+<option>Google Pay</option>
+<option>PhonePe</option>
+<option>Paytm</option>
+</select>
+</div>
+
+<div class="full">
+<label>Additional Note</label>
+<textarea id="notes" placeholder="Optional instructions"></textarea>
+</div>
+
+</div>
+
+<div class="total">
+Product Total: <strong id="itemTotal">₹500</strong><br>
+COD Charge: <strong id="codTotal">₹0</strong><br>
+Grand Total: <strong id="grandTotal">₹500</strong>
+</div>
+
+<button type="submit" class="submit">CONTINUE TO WHATSAPP</button>
+<p class="hint">WhatsApp opens with your order details. Press SEND to confirm.</p>
+</form>
+</div>
+</div>
+</section>
+
+<!-- ORDER HISTORY -->
+<section id="orders" class="page">
+<div class="wrap">
+<h2 class="title">MY ORDERS</h2>
+<p class="subtitle">Your order history on this browser.</p>
+<div id="ordersList" class="empty">No orders yet.</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="page">
+<div class="wrap">
+<h2 class="title">CONTACT DARVIN</h2>
+<p class="subtitle">Contact us for orders and support.</p>
+
+<div class="contacts">
+<div class="contact">
+<h3>WHATSAPP</h3>
+<a href="https://wa.me/919798674867" target="_blank">+91 97986 74867</a>
+</div>
+
+<div class="contact">
+<h3>PHONE</h3>
+<a href="tel:+919798674867">+91 97986 74867</a>
+</div>
+
+<div class="contact">
+<h3>INSTAGRAM</h3>
+<a href="https://www.instagram.com/darv.inofficial/" target="_blank">@darv.inofficial</a>
+</div>
+
+<div class="contact">
+<h3>EMAIL</h3>
+<a href="mailto:bhartinikhil4807@gmail.com">bhartinikhil4807@gmail.com</a>
+</div>
+</div>
+
+<div class="policy">
+Delivery Time: 7–10 Days<br>
+Return Policy: Exchange Only, No Refund<br>
+Cash on Delivery Extra Charge: ₹20<br>
+Payment Options: Google Pay, PhonePe, Paytm, COD
+</div>
+</div>
+</section>
+
+</main>
+
+<footer>
+<strong>DARVIN — WEAR THE REBEL.</strong><br>
+Instagram
