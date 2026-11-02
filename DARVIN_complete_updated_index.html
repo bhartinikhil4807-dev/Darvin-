@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050505">
+<meta name="google-site-verification" content="LdxeDKDb4Mj89SRfa72zEjD654quiMvEFcc8mtxDcyc">
+<title>DARVIN | WEAR THE REBEL</title>
+<meta name="description" content="Shop DARVIN premium black oversized streetwear. Bold style. Silver identity. Wear the Rebel.">
+<meta property="og:site_name" content="DARVIN">
+<meta property="og:title" content="DARVIN | WEAR THE REBEL">
+<meta property="og:description" content="Premium black oversized streetwear. Be Different. Be Darvin.">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#050505;color:#fff;font-family:Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font-family:inherit}
+.topline{background:#d8d8d8;color:#000;text-align:center;padding:11px;font-size:11px;font-weight:bold;letter-spacing:3px}
+header{background:#080808;border-bottom:1px solid #444;padding:18px 5%;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10}
+.logo{font-family:Georgia,serif;font-size:32px;letter-spacing:5px;font-weight:bold}
+nav{display:flex;gap:22px;font-size:12px;letter-spacing:1px}
+.cart{background:transparent;border:1px solid white;color:white;padding:12px 18px}
+.hero{position:relative;min-height:460px;background:#101010;display:flex;align-items:center;overflow:hidden}
+.hero img{width:100%;height:460px;object-fit:cover;opacity:.72}
+.hero-content{position:absolute;left:7%;top:50%;transform:translateY(-50%);max-width:550px}
+.hero-content small{letter-spacing:4px;color:#ddd}
+.hero-content h1{font-family:Georgia,serif;font-size:clamp(42px,8vw,85px);margin:20px 0}
+.hero-content p{color:#ccc;letter-spacing:3px;margin-bottom:25px}
+.btn{display:inline-block;background:#fff;color:#000;padding:15px 28px;font-weight:bold;letter-spacing:2px;border:none}
+.features{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid #444}
+.feature{text-align:center;padding:25px 10px;border-right:1px solid #333}
+.feature b{letter-spacing:2px;font-size:12px}
+.feature p{color:#999;margin-top:8px;font-size:12px}
+.section{max-width:1300px;margin:auto;padding:65px 5%}
+.heading{margin-bottom:32px}
+.heading small{color:#aaa;letter-spacing:4px}
+.heading h2{font-family:Georgia,serif;font-size:clamp(35px,6vw,58px);margin-top:12px}
+.heading p{color:#999;margin-top:12px;line-height:1.7}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.product{background:#101010;border:1px solid #333;padding:12px;scroll-margin-top:100px}
+.product img{width:100%;height:350px;object-fit:cover;display:block;background:#181818}
+.product h3{font-size:14px;letter-spacing:1px;margin-top:18px}
+.product p{color:#aaa;font-size:12px;margin-top:9px}
+.price{font-size:20px;font-weight:bold;margin:15px 0}
+select{width:100%;padding:13px;background:#080808;color:white;border:1px solid #555;margin-bottom:12px}
+.add,.pay-btn{width:100%;padding:14px;background:#fff;color:#000;border:none;font-weight:bold;letter-spacing:1.5px}
+.add:hover,.btn:hover{background:#bbb}
+.share-btn{width:100%;margin-top:10px;padding:13px;background:#050505;color:#fff;border:1px solid #c0c0c0;border-radius:7px;font-size:13px;font-weight:bold;letter-spacing:1px;transition:.25s}
+.share-btn:hover{background:#c0c0c0;color:#000}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.gallery img{width:100%;height:350px;object-fit:cover;border:1px solid #333;background:#181818}
+.ad-banner{background:#111;text-align:center;padding:70px 20px;border-top:1px solid #444;border-bottom:1px solid #444}
+.ad-banner h2{font-family:Georgia,serif;font-size:clamp(35px,7vw,70px)}
+.ad-banner p{color:#aaa;letter-spacing:4px;margin:20px}
+.payment{background:#111;border:1px solid #444;padding:28px;text-align:center}
+.payment h2{font-family:Georgia,serif;margin-bottom:18px}
+.payment-methods{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}
+.payment-methods span{border:1px solid #777;padding:12px 18px;font-size:13px}
+.payment p{color:#aaa;font-size:12px;margin-top:18px;line-height:1.7}
+footer{border-top:1px solid #444;padding:38px 5%;text-align:center;color:#999;line-height:2}
+.modal{display:none;position:fixed;inset:0;background:#000e;z-index:30;align-items:center;justify-content:center;padding:18px}
+.modal.show{display:flex}
+.box{background:#111;border:1px solid #777;padding:24px;width:100%;max-width:460px;max-height:85vh;overflow:auto}
+.box h2{margin-bottom:18px}
+.close{float:right;background:none;color:white;border:none;font-size:26px}
+#cartItems{line-height:1.9;margin:18px 0}
+#cartTotal{font-weight:bold;font-size:19px;margin:18px 0}
+.modal-actions{display:grid;gap:10px}
+.secondary-btn{width:100%;padding:13px;background:#050505;color:#fff;border:1px solid #aaa;font-weight:bold;letter-spacing:1px}
+@media(max-width:700px){nav{display:none}.features{grid-template-columns:repeat(2,1fr)}.products{grid-template-columns:1fr 1fr}.product img{height:260px}.hero,.hero img{height:350px;min-height:350px}.gallery img{height:230px}.logo{font-size:26px}}
+@media(max-width:430px){.products{grid-template-columns:1fr}.product img{height:340px}}
+</style>
+</head>
+<body>
+<div class="topline">BUILT FOR THE BOLD · DARVIN STREETWEAR</div>
+<header>
+<a href="#home" class="logo">DARVIN</a>
+<nav><a href="#home">HOME</a><a href="#shop">SHOP</a><a href="#gallery">GALLERY</a><a href="#contact">CONTACT</a></nav>
+<button class="cart" onclick="openCart()">BAG (<span id="count">0</span>)</button>
+</header>
+
+<main id="home">
+<section class="hero">
+<img src="darvin-hero.jpg" alt="DARVIN premium black streetwear campaign" onerror="this.style.display='none'">
+<div class="hero-content"><small>THE NEW STREETWEAR GENERATION</small><h1>DARVIN</h1><p>WEAR THE REBEL.</p><a href="#shop" class="btn">SHOP NOW →</a></div>
+</section>
+
+<section class="features">
+<div class="feature"><b>DELIVERY</b><p>Across India · 7–10 days</p></div>
+<div class="feature"><b>PREMIUM QUALITY</b><p>Oversized Streetwear</p></div>
+<div class="feature"><b>EXCHANGE</b><p>Exchange only · Terms apply</p></div>
+<div class="feature"><b>SUPPORT</b><p>WhatsApp customer assistance</p></div>
+</section>
+
+<section class="section" id="shop">
+<div class="heading"><small>THE FIRST DROP</small><h2>NEW ARRIVALS</h2><p>Black on Black. Silver Identity.<br>More than just a T-shirt. It's a statement.</p></div>
+<div class="products">
+<article class="product" id="darvin-product-1" data-name="Signature Logo Tee" data-price="500" data-image="darvin-tee-hanging.jpg">
+<img src="darvin-tee-hanging.jpg" alt="DARVIN Signature Logo T-shirt" onerror="this.alt='DARVIN Signature Logo Tee image';this.style.background='#222'">
+<h3>SIGNATURE LOGO TEE</h3><p>Black · Silver Front Logo</p><div class="price">₹500</div>
+<select id="size1" aria-label="Select size for Signature Logo Tee"><option value="">Select Size</option><option>M</option><option>L</option><option>XXL</option></select>
+<button class="add" onclick="addToBag('Signature Logo Tee',500,'size1')">ADD TO BAG</button>
+<button class="share-btn" onclick="shareProduct(1)">📤 SHARE PRODUCT</button>
+</article>
+
+<article class="product" id="darvin-product-2" data-name="Oversized Fit Tee" data-price="500" data-image="darvin-model.jpg">
+<img src="darvin-model.jpg" alt="DARVIN Oversized Model T-shirt" onerror="this.alt='DARVIN Oversized Fit Tee image';this.style.background='#222'">
+<h3>OVERSIZED FIT TEE</h3><p>Premium Streetwear</p><div class="price">₹500</div>
+<select id="size2" aria-label="Select size for Oversized Fit Tee"><option value="">Select Size</option><option>M</option><option>L</option><option>XXL</option></select>
+<button class="add" onclick="addToBag('Oversized Fit Tee',500,'size2')">ADD TO BAG</button>
+<button class="share-btn" onclick="shareProduct(2)">📤 SHARE PRODUCT</button>
+</article>
+
+<article class="product" id="darvin-product-3" data-name="Logo Detail Tee" data-price="500" data-image="darvin-logo-detail.jpg">
+<img src="darvin-logo-detail.jpg" alt="DARVIN Silver Logo Detail T-shirt" onerror="this.alt='DARVIN Logo Detail Tee image';this.style.background='#222'">
+<h3>LOGO DETAIL TEE</h3><p>Silver Graphic Identity</p><div class="price">₹500</div>
+<select id="size3" aria-label="Select size for Logo Detail Tee"><option value="">Select Size</option><option>M</option><option>L</option><option>XXL</option></select>
+<button class="add" onclick="addToBag('Logo Detail Tee',500,'size3')">ADD TO BAG</button>
+<button class="share-btn" onclick="shareProduct(3)">📤 SHARE PRODUCT</button>
+</article>
+</div>
+</section>
+
+<section class="section" id="gallery">
+<div class="heading"><small>DARVIN VISUAL WORLD</small><h2>CAMPAIGN GALLERY</h2><p>Front View · Back Print · Details</p></div>
+<div class="gallery">
+<img src="darvin-model-front-new.jpg" alt="DARVIN T-shirt front view" loading="lazy">
+<img src="darvin-campaign-banner.jpg" alt="DARVIN campaign banner" loading="lazy">
+<img src="darvin-product-hanging-new.jpg" alt="DARVIN product on hanger" loading="lazy">
+<img src="darvin-print-closeup-new.jpg" alt="DARVIN print detail close-up" loading="lazy">
+</div>
+</section>
+
+<section class="ad-banner"><h2>BUILT FOR THE REBELS.</h2><p>WEAR THE REBEL.</p><a href="#shop" class="btn">EXPLORE COLLECTION</a></section>
+
+<section class="section">
+<div class="payment">
+<h2>PAYMENT OPTIONS</h2>
+<div class="payment-methods"><span>Google Pay / UPI</span><span>PhonePe / UPI</span><span>Debit Card</span><span>Credit Card</span><span>Cash on Delivery</span></div>
+<p>UPI intent payment can be initiated from your UPI app. Card payments require a secure payment gateway integration. Payment is not verified automatically by this website. Cash on Delivery orders can be placed through WhatsApp.</p>
+</div>
+</section>
+
+<section class="section" id="contact">
+<div class="heading"><small>GET IN TOUCH</small><h2>CONTACT DARVIN</h2></div>
+<p style="color:#aaa;line-height:2">WhatsApp / Phone: +91 9798674867<br>Patna, Bihar, India</p>
+</section>
+</main>
+
+<footer><h2>DARVIN</h2><p>WEAR THE REBEL.</p><p>© 2026 DARVIN. ALL RIGHTS RESERVED.</p></footer>
+
+<div class="modal" id="cartModal" role="dialog" aria-modal="true" aria-label="Shopping bag">
+<div class="box">
+<button class="close" onclick="closeCart()" aria-label="Close bag">×</button>
+<h2>YOUR BAG</h2>
+<div id="cartItems">Your bag is empty.</div>
+<div id="cartTotal"></div>
+<div class="modal-actions">
+<button class="add" onclick="checkoutWhatsApp()">ORDER / COD ON WHATSAPP</button>
+<button class="pay-btn" onclick="payWithUPI()">PAY TOTAL WITH UPI</button>
+<button class="secondary-btn" onclick="closeCart()">CONTINUE SHOPPING</button>
+</div>
+<p style="color:#aaa;font-size:11px;margin-top:14px">UPI payment must be completed in your UPI app. Please send the payment confirmation to DARVIN. This site cannot independently verify payment.</p>
+</div>
+</div>
+
+<script>
+"use strict";
+const bag = [];
+const DARVIN_PHONE = "919798674867";
+const DARVIN_UPI_ID = "nikhilsingh97986@oksbi";
+const STORE_URL = "https://bhartinikhil4807-dev.github.io/Darvin-/";
+
+function productDetails(index){
+  const card = document.getElementById("darvin-product-" + index);
+  const name = card.dataset.name;
+  const price = Number(card.dataset.price);
+  const imagePath = card.dataset.image;
+  const url = STORE_URL + "#darvin-product-" + index;
+  return {card,name,price,imagePath,url};
+}
+
+async function shareProduct(index){
+  const p = productDetails(index);
+  const message = "🖤 DARVIN — WEAR THE REBEL.\\n" + p.name +
+    " · ₹" + p.price + "\\nPremium black streetwear. Be Different. Be Darvin.\\nShop: " + p.url;
+  // Share image attachment where browser and platform support file sharing.
+  try {
+    if (navigator.share && navigator.canShare) {
+      const response = await fetch(p.imagePath);
+      if (response.ok) {
+        const blob = await response.blob();
+        const file = new File([blob], p.imagePath.split("/").pop(), {type: blob.type || "image/jpeg"});
+        const shareData = {title:"DARVIN | " + p.name, text:message, url:p.url, files:[file]};
+        if (navigator.canShare({files:[file]})) {
+          await navigator.share(shareData);
+          return;
+        }
+      }
+    }
+  } catch (err) {
+    // If image sharing is unavailable/cancelled, use text/link sharing below.
+    if (err && err.name === "AbortError") return;
+  }
+  try {
+    if (navigator.share) {
+      await navigator.share({title:"DARVIN | " + p.name, text:message, url:p.url});
+    } else {
+      const wa = "https://wa.me/?text=" + encodeURIComponent(message);
+      window.open(wa, "_blank", "noopener");
+    }
+  } catch (err) {
+    if (err && err.name !== "AbortError") {
+      const wa = "https://wa.me/?text=" + encodeURIComponent(message);
+      window.open(wa, "_blank", "noopener");
+    }
+  }
+}
+
+function addToBag(name,price,sizeId){
+  const size = document.getElementById(sizeId).value;
+  if(!size){alert("Please select your T-shirt size.");return;}
+  bag.push({name,price:Number(price),size});
+  document.getElementById("count").textContent = bag.length;
+  alert(name + " (Size " + size + ") added to your bag!");
+}
+
+function totalAmount(){return bag.reduce((sum,item)=>sum+item.price,0);}
+
+function openCart(){
+  const items = document.getElementById("cartItems");
+  items.innerHTML = bag.length
+    ? bag.map((item,i)=>`${i+1}. ${escapeHTML(item.name)} | Size: ${escapeHTML(item.size)} | ₹${item.price}`).join("<br>")
+    : "Your bag is empty.";
+  document.getElementById("cartTotal").textContent = "TOTAL: ₹" + totalAmount();
+  document.getElementById("cartModal").classList.add("show");
+}
+function closeCart(){document.getElementById("cartModal").classList.remove("show");}
+function escapeHTML(value){return String(value).replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+
+function orderMessage(){
+  let msg = "Hello DARVIN! I want to order:%0A";
+  bag.forEach((item,i)=>{msg += (i+1)+". "+encodeURIComponent(item.name)+" | Size: "+encodeURIComponent(item.size)+" | ₹"+item.price+"%0A";});
+  msg += "Total: ₹" + totalAmount() + "%0AWebsite: " + encodeURIComponent(STORE_URL);
+  return msg;
+}
+function checkoutWhatsApp(){
+  if(!bag.length){alert("Your bag is empty.");return;}
+  window.open("https://wa.me/"+DARVIN_PHONE+"?text="+orderMessage(),"_blank","noopener");
+}
+function payWithUPI(){
+  if(!bag.length){alert("Your bag is empty.");return;}
+  const amount = totalAmount().toFixed(2);
+  const upiUrl = "upi://pay?pa="+encodeURIComponent(DARVIN_UPI_ID)+
+    "&pn="+encodeURIComponent("DARVIN")+
+    "&am="+encodeURIComponent(amount)+
+    "&cu=INR"+
+    "&tn="+encodeURIComponent("DARVIN clothing order");
+  window.location.href = upiUrl;
+}
+document.getElementById("cartModal").addEventListener("click",function(e){
+  if(e.target===this) closeCart();
+});
+</script>
+</body>
+</html>
