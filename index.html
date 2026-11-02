@@ -32,7 +32,67 @@
     transform: scale(1.02);
 }
 
-body{
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const products = document.querySelectorAll(".product");
+
+    products.forEach(function(product, index) {
+
+        const image = product.querySelector(".photo img");
+
+        if (!image) return;
+
+        const productName = image.alt || "DARVIN Premium Black T-Shirt";
+
+        const shareButton = document.createElement("button");
+
+        shareButton.className = "share-btn";
+
+        shareButton.innerHTML = "📤 SHARE PRODUCT";
+
+        product.appendChild(shareButton);
+
+        shareButton.addEventListener("click", async function() {
+
+            const productLink = window.location.href.split("#")[0]
+                                + "#darvin-product-" + (index + 1);
+
+            const shareText =
+                "🖤 DARVIN — WEAR THE REBEL.\n\n" +
+                productName + "\n\n" +
+                "Premium Oversized Black T-Shirt.\n" +
+                "Be Different. Be Darvin.\n\n" +
+                "Shop Now: " + productLink;
+
+            if (navigator.share) {
+
+                try {
+                    await navigator.share({
+                        title: "DARVIN Clothing",
+                        text: shareText,
+                        url: productLink
+                    });
+                } catch (error) {
+                    console.log("Sharing cancelled");
+                }
+
+            } else {
+
+                const whatsappLink =
+                    "https://wa.me/?text=" +
+                    encodeURIComponent(shareText);
+
+                window.open(whatsappLink, "_blank");
+
+            }
+
+        });
+
+    });
+
+});
+</script>body{
 background:#050505;
 color:white;
 font-family:Arial,sans-serif;
