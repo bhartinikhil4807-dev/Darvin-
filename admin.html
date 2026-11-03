@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111111">
+<title>DARVIN Admin Dashboard</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f4f4f4;color:#171717}
+header{background:#111;color:#fff;padding:18px 16px}header h1{margin:0;font-size:23px;letter-spacing:2px}header p{margin:6px 0 0;color:#ccc;font-size:13px}
+main{max-width:760px;margin:auto;padding:14px}.tabs{display:flex;gap:8px;overflow:auto;margin-bottom:14px}
+.tabs button{white-space:nowrap;border:0;border-radius:10px;padding:11px 14px;background:#ddd;font-weight:bold}.tabs button.active{background:#111;color:#fff}
+.panel{background:#fff;border-radius:14px;padding:16px;margin-bottom:14px;box-shadow:0 2px 8px #0000}
+h2{font-size:18px;margin:0 0 13px}label{display:block;font-size:13px;font-weight:bold;margin:10px 0 5px}
+input,select,textarea{width:100%;padding:12px;border:1px solid #ccc;border-radius:9px;font-size:15px;background:white}
+button.action{border:0;background:#111;color:white;padding:12px 15px;border-radius:9px;font-weight:bold;margin-top:12px}
+button.red{background:#a32121}.small{font-size:12px;color:#666;line-height:1.5}
+.product{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #eee;align-items:center}.product img{width:68px;height:68px;object-fit:cover;border-radius:9px;background:#eee}.product .info{flex:1}.product strong{display:block}.product button{padding:7px 9px;border:0;border-radius:7px;background:#eee;margin:3px}
+.notice{background:#fff4d5;border-radius:10px;padding:12px;font-size:13px;line-height:1.5;margin-bottom:14px}
+.hidden{display:none}.stats{display:flex;gap:10px}.stat{flex:1;background:#eee;border-radius:10px;padding:12px}.stat b{font-size:22px;display:block}
+</style>
+</head>
+<body>
+<header><h1>DARVIN ADMIN</h1><p>WEAR THE REBEL • Mobile Dashboard</p></header>
+<main>
+<div class="notice"><b>ध्यान दें:</b> यह मोबाइल पर चलने वाला शुरुआती dashboard है। इसमें जो products जोड़ोगे वे इसी browser/mobile में save होंगे। यह अभी Shopify या live DARVIN website से sync नहीं करता।</div>
+<div class="tabs">
+<button class="active" onclick="showTab('products',this)">Products</button>
+<button onclick="showTab('orders',this)">Orders</button>
+<button onclick="showTab('offers',this)">Offers</button>
+<button onclick="showTab('backup',this)">Backup</button>
+</div>
+<section id="products">
+<div class="panel"><h2>नया Product जोड़ें</h2>
+<label>Product Name</label><input id="name" placeholder="DARVIN Oversized Black T-shirt">
+<label>Price (₹)</label><input id="price" type="number" min="0" placeholder="500">
+<label>Category</label><select id="category"><option>Oversized T-shirt</option><option>Gym T-shirt</option><option>Plain T-shirt</option><option>Combo</option><option>Kurta</option><option>Other</option></select>
+<label>Size</label><input id="sizes" value="M, L, XXL">
+<label>Colour</label><input id="color" value="Black">
+<label>Product Photo</label><input id="photo" type="file" accept="image/*">
+<button class="action" onclick="addProduct()">+ Add Product</button>
+</div>
+<div class="panel"><h2>Saved Products</h2><div id="productList"></div></div>
+</section>
+<section id="orders" class="hidden"><div class="panel"><h2>Order Notes</h2>
+<p class="small">यहां आप ग्राहक के orders को manually note कर सकते हैं। Shopify orders अभी अपने-आप यहां नहीं आएंगे।</p>
+<label>Customer Name</label><input id="cust" placeholder="Customer name">
+<label>WhatsApp / Phone</label><input id="phone" placeholder="Phone number">
+<label>Product & Order Details</label><textarea id="details" rows="3" placeholder="Product, size, address, payment..."></textarea>
+<label>Status</label><select id="status"><option>New</option><option>Confirmed</option><option>Shipped</option><option>Delivered</option><option>Cancelled</option></select>
+<button class="action" onclick="addOrder()">Save Order Note</button></div>
+<div class="panel"><h2>Order List</h2><div id="orderList"></div></div></section>
+<section id="offers" class="hidden"><div class="panel"><h2>Offer / Voucher</h2>
+<label>Voucher Code</label><input id="code" value="DARVIN5">
+<label>Discount %</label><input id="discount" type="number" value="5" min="1" max="100">
+<label>Offer Description</label><textarea id="desc" rows="3">Follow @darv.inofficial on Instagram and get 5% off.</textarea>
+<button class="action" onclick="saveOffer()">Save Offer</button><div id="offerView" class="small"></div></div></section>
+<section id="backup" class="hidden"><div class="panel"><h2>Backup / Restore</h2><p class="small">अपने products और order notes का JSON backup डाउनलोड करें।</p><button class="action" onclick="backup()">Download Backup</button>
+<label>Restore JSON Backup</label><input type="file" id="restoreFile" accept=".json,application/json"><button class="action" onclick="restore()">Restore Backup</button>
+<button class="action red" onclick="clearAll()">Clear All Data</button></div></section>
+</main>
+<script>
+const get=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}};
+let products=get('darvin_products',[]),orders=get('darvin_orders',[]),offer=get('darvin_offer',{code:'DARVIN5',discount:5,desc:'Follow @darv.inofficial on Instagram and get 5% off.'});
+function save(){localStorage.setItem('darvin_products',JSON.stringify(products));localStorage.setItem('darvin_orders',JSON.stringify(orders));localStorage.setItem('darvin_offer',JSON.stringify(offer));}
+function showTab(id,btn){document.querySelectorAll('main>section').forEach(s=>s.classList.add('hidden'));document.getElementById(id).classList.remove('hidden');document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');}
+function addProduct(){let name=document.getElementById('name').value.trim(),price=Number(document.getElementById('price').value),file=document.getElementById('photo').files[0];if(!name||!price||price<1){alert('Product name और सही price डालें');return}
+const finish=(image)=>{products.unshift({id:Date.now(),name,price,category:category.value,sizes:sizes.value,color:color.value,image});save();renderProducts();document.getElementById('name').value='';document.getElementById('price').value='';document.getElementById('photo').value='';alert('Product dashboard में save हो गया');};
+if(file){let r=new FileReader();r.onload=()=>finish(r.result);r.readAsDataURL(file)}else finish('');}
+function renderProducts(){let el=document.getElementById('productList');if(!products.length){el.innerHTML='<p class="small">अभी कोई product नहीं है।</p>';return}el.innerHTML=products.map(p=>`<div class="product">${p.image?`<img src="${p.image}">`:'<div style="width:68px;height:68px;background:#eee;border-radius:9px"></div>'}<div class="info"><strong>${esc(p.name)}</strong><span>₹${p.price} • ${esc(p.category)} • ${esc(p.color||'')}</span><div class="small">Sizes: ${esc(p.sizes||'')}</div></div><button onclick="editPrice(${p.id})">Price</button><button onclick="delProduct(${p.id})">Delete</button></div>`).join('');}
+function editPrice(id){let p=products.find(x=>x.id===id),v=prompt('नया price ₹',p.price);if(v!==null&&Number(v)>0){p.price=Number(v);save();renderProducts()}}
+function delProduct(id){if(confirm('क्या इस product को delete करें?')){products=products.filter(p=>p.id!==id);save();renderProducts()}}
+function addOrder(){let customer=cust.value.trim(),detail=details.value.trim();if(!customer||!detail){alert('Customer name और order details डालें');return}orders.unshift({id:Date.now(),customer,phone:phone.value,details:detail,status:status.value});save();renderOrders();cust.value='';phone.value='';details.value='';alert('Order note saved');}
+function renderOrders(){let el=document.getElementById('orderList');if(!orders.length){el.innerHTML='<p class="small">अभी कोई order note नहीं है।</p>';return}el.innerHTML=orders.map(o=>`<div class="product"><div class="info"><strong>${esc(o.customer)} • ${esc(o.status)}</strong><span>${esc(o.phone||'')}</span><div class="small">${esc(o.details)}</div></div><button onclick="changeStatus(${o.id})">Status</button><button onclick="delOrder(${o.id})">Delete</button></div>`).join('')}
+function changeStatus(id){let o=orders.find(x=>x.id===id),s=prompt('Status: New / Confirmed / Shipped / Delivered / Cancelled',o.status);if(s){o.status=s;save();renderOrders()}}
+function delOrder(id){if(confirm('Order note delete करें?')){orders=orders.filter(o=>o.id!==id);save();renderOrders()}}
+function saveOffer(){offer={code:code.value.trim(),discount:Number(discount.value),desc:desc.value.trim()};save();renderOffer();alert('Offer saved')}
+function renderOffer(){offerView.innerHTML=`Saved: <b>${esc(offer.code)}</b> — ${offer.discount}% off<br>${esc(offer.desc)}`}
+function backup(){let blob=new Blob([JSON.stringify({products,orders,offer},null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='darvin-admin-backup.json';a.click();URL.revokeObjectURL(a.href)}
+function restore(){let f=restoreFile.files[0];if(!f){alert('Backup JSON file select करें');return}let r=new FileReader();r.onload=()=>{try{let d=JSON.parse(r.result);products=d.products||[];orders=d.orders||[];offer=d.offer||offer;save();renderProducts();renderOrders();renderOffer();alert('Backup restored')}catch(e){alert('JSON file सही नहीं है')}};r.readAsText(f)}
+function clearAll(){if(confirm('सभी saved products और order notes हट जाएंगे. Continue?')){products=[];orders=[];save();renderProducts();renderOrders()}}
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+renderProducts();renderOrders();renderOffer();
+</script>
+</body></html>
