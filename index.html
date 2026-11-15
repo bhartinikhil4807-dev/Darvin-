@@ -1,78 +1,429 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>DARVIN | WEAR THE REBEL</title>
-<meta name="description" content="DARVIN men's streetwear and polo collection.">
-<meta name="theme-color" content="#111111">
+<meta name="description" content="DARVIN premium men's streetwear, 210 GSM oversized T-shirts, cotton polos and more.">
+<meta name="theme-color" content="#090909">
+
 <style>
-:root{--black:#111;--white:#fff;--muted:#777;--line:#e5e5e5;--accent:#c9a66b}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#171717;background:#fafafa}
-header{background:#111;color:white;padding:17px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:5}
-.brand{font-weight:900;letter-spacing:3px;font-size:24px}.tag{font-size:10px;letter-spacing:2px;color:#c9a66b;margin-top:3px}
-.header-actions{display:flex;gap:8px;flex-wrap:wrap}button,.btn{border:0;padding:11px 14px;cursor:pointer;font-weight:700;border-radius:3px;background:#111;color:#fff}button.light{background:white;color:#111;border:1px solid #ddd}button.gold{background:#c9a66b;color:#111}
-.hero{padding:35px 5%;background:linear-gradient(110deg,#171717,#333);color:#fff}.hero h1{margin:0;font-size:clamp(28px,5vw,48px);letter-spacing:2px}.hero p{color:#ddd;margin:10px 0 0}
-main{padding:24px 5%}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px}.toolbar input,.toolbar select,.admin input,.admin select,.admin textarea,.order input,.order select,.order textarea{padding:12px;border:1px solid #ddd;border-radius:3px;background:#fff;font:inherit}.toolbar input{flex:1;min-width:180px}
-.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.card{background:white;border:1px solid #eee;border-radius:5px;overflow:hidden}.photo{height:330px;background:#f1f1f1;display:flex;align-items:center;justify-content:center;cursor:zoom-in;overflow:hidden}.photo img{width:100%;height:100%;object-fit:contain}.details{padding:13px}.details h3{font-size:15px;margin:0 0 7px}.meta{font-size:12px;color:#777;margin-bottom:8px}.price{font-weight:800;margin:8px 0}.price.pending{color:#888;font-size:12px}.card-actions{display:flex;gap:6px;flex-wrap:wrap}.card-actions button{flex:1;padding:9px;font-size:12px}
-.admin{display:none;background:#fff;border:1px solid #ddd;padding:18px;margin:20px 0;border-radius:5px}.admin h2{margin-top:0}.admin-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.admin input,.admin select{width:100%}.admin .wide{grid-column:1/-1}.note{font-size:12px;color:#666;line-height:1.5}
-footer{padding:25px 5%;background:#111;color:#ddd;margin-top:25px;font-size:13px;display:flex;gap:15px;flex-wrap:wrap;justify-content:space-between}footer a{color:#c9a66b}
-.modal{display:none;position:fixed;inset:0;background:#000d;z-index:20;align-items:center;justify-content:center;padding:15px}.modal.show{display:flex}.modalbox{background:white;padding:16px;border-radius:5px;max-width:900px;width:100%;max-height:95vh;overflow:auto}.modalbox img{display:block;max-height:72vh;max-width:100%;margin:auto;object-fit:contain}.modalhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.order{display:grid;gap:10px}.order textarea{min-height:80px}.cartlist{margin:10px 0}
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.photo{height:280px}}
-@media(max-width:520px){header{padding:13px 4%}.brand{font-size:20px}.hero,main,footer{padding-left:4%;padding-right:4%}.grid{gap:9px}.photo{height:220px}.details{padding:10px}.card-actions button{padding:8px 5px}.admin-grid{grid-template-columns:1fr}}
+:root {
+--bg:#080808;
+--panel:#141414;
+--gold:#c6a36a;
+--white:#f5f3ef;
+--muted:#aaa;
+--line:#292929;
+}
+* {box-sizing:border-box}
+body {
+margin:0;background:var(--bg);color:var(--white);
+font-family:Arial,Helvetica,sans-serif
+}
+header {
+position:sticky;top:0;z-index:10;background:#080808ee;
+border-bottom:1px solid var(--line);padding:16px 5%;
+display:flex;align-items:center;justify-content:space-between;
+gap:12px;backdrop-filter:blur(8px)
+}
+.brand {font-size:26px;font-weight:900;letter-spacing:5px}
+.tag {font-size:10px;color:var(--gold);letter-spacing:3px;margin-top:5px}
+button {
+border:1px solid var(--gold);background:var(--gold);
+color:#080808;padding:11px 14px;border-radius:2px;
+font-weight:bold;cursor:pointer
+}
+button.secondary {background:transparent;color:var(--white);border-color:#555}
+.hero {
+min-height:320px;padding:55px 5%;display:flex;
+flex-direction:column;justify-content:center;
+background:linear-gradient(90deg,#080808e8,#08080866),
+url('https://bhartinikhil4807-dev.github.io/Darvin-/darvin-campaign-banner.jpg')
+center/cover no-repeat;border-bottom:1px solid var(--line)
+}
+.kicker {color:var(--gold);letter-spacing:4px;font-size:12px;font-weight:bold}
+.hero h1 {font-size:clamp(32px,6vw,64px);line-height:1.05;max-width:720px;margin:16px 0}
+.hero p {color:#ddd;max-width:500px;line-height:1.6}
+main {padding:32px 5%}
+.section-title {font-size:clamp(23px,4vw,34px);margin:0 0 8px;letter-spacing:1px}
+.section-sub {color:var(--muted);margin:0 0 24px}
+.toolbar {display:flex;flex-wrap:wrap;gap:10px;margin-bottom:22px}
+.toolbar input,.toolbar select {
+min-width:160px;flex:1;padding:12px;background:#151515;
+border:1px solid #333;color:white;border-radius:2px
+}
+.grid {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.card {background:var(--panel);border:1px solid var(--line);min-width:0;overflow:hidden}
+.photo {
+height:300px;position:relative;background:#1c1c1c;
+display:flex;align-items:center;justify-content:center;overflow:hidden
+}
+.photo img {width:100%;height:100%;object-fit:contain;display:block}
+.photo img.broken {display:none}
+.fallback {
+display:none;color:#bbb;text-align:center;padding:15px;
+position:absolute;inset:0;align-items:center;
+justify-content:center;flex-direction:column;gap:8px
+}
+.fallback b {font-size:20px;letter-spacing:3px}
+.fallback span {font-size:12px;color:var(--gold)}
+.details {padding:14px}
+.category {font-size:10px;color:var(--gold);letter-spacing:2px;text-transform:uppercase}
+.details h3 {font-size:15px;line-height:1.4;margin:8px 0}
+.meta {color:#999;font-size:12px}
+.price {font-weight:bold;margin:10px 0;color:#f4f0e8}
+.actions {display:flex;gap:7px}
+.actions button {flex:1;padding:9px 7px;font-size:12px}
+.actions .secondary {border-color:#555}
+.owner {
+display:none;background:#121212;border:1px solid #393939;
+padding:18px;margin:24px 0
+}
+.owner.open {display:block}
+.owner-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.owner input,.owner select {
+width:100%;padding:11px;background:#0b0b0b;color:white;border:1px solid #333
+}
+.owner h2 {margin-top:0}
+.note {font-size:12px;line-height:1.5;color:#aaa}
+.video-section {
+padding:35px 5%;border-top:1px solid var(--line);
+border-bottom:1px solid var(--line)
+}
+.video-wrap {max-width:900px;margin:20px auto;background:#151515;border:1px solid #303030;padding:14px}
+video {width:100%;max-height:600px;background:#000;display:block;object-fit:contain}
+.video-caption {color:#aaa;margin:12px 0 0;font-size:14px}
+footer {
+padding:30px 5%;color:#aaa;display:flex;
+justify-content:space-between;gap:15px;flex-wrap:wrap
+}
+footer strong {color:white;letter-spacing:3px}
+footer a {color:var(--gold)}
+.modal {
+display:none;position:fixed;inset:0;background:#000d;z-index:30;
+align-items:center;justify-content:center;padding:15px
+}
+.modal.show {display:flex}
+.modalbox {
+background:#151515;border:1px solid #333;padding:18px;
+width:100%;max-width:650px;max-height:90vh;overflow:auto
+}
+.modalhead {display:flex;justify-content:space-between;align-items:center}
+.cart-row {display:flex;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid #333}
+
+@media(max-width:900px) {
+.grid {grid-template-columns:repeat(3,minmax(0,1fr))}
+.photo {height:260px}
+}
+@media(max-width:650px) {
+header {padding:13px 4%}
+.brand {font-size:21px}
+.hero,main,.video-section,footer {padding-left:4%;padding-right:4%}
+.grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.photo {height:clamp(155px,52vw,230px)}
+.details {padding:10px}
+.actions {flex-direction:column}
+.actions button {width:100%}
+.owner-grid {grid-template-columns:1fr}
+}
 </style>
 </head>
-<body>
-<header>
- <div><div class="brand">DARVIN</div><div class="tag">WEAR THE REBEL</div></div>
- <div class="header-actions"><button class="light" onclick="showCart()">🛒 Cart (<span id="cartCount">0</span>)</button><button class="gold" onclick="ownerLogin()">Owner Login</button></div>
-</header>
-<section class="hero"><h1>NOT JUST A T-SHIRT.<br>IT'S YOUR IDENTITY.</h1><p>Men's clothing • Premium essentials • Streetwear</p></section>
-<main>
- <section id="adminPanel" class="admin">
-  <h2>Owner Dashboard</h2>
-  <p class="note">Upload product image, enter product name and price, then save. Products are saved in this browser only. For secure owner-only access and updates visible to all customers, connect a backend such as Firebase.</p>
-  <div class="admin-grid">
-   <input id="pName" placeholder="Product name (e.g. Premium Polo)">
-   <input id="pPrice" type="number" min="0" placeholder="Price in ₹">
-   <input id="pColor" placeholder="Color">
-   <select id="pCategory"><option>Polo</option><option>Oversized T-shirt</option><option>Gym T-shirt</option><option>Plain T-shirt</option><option>Hoodie</option><option>Other</option></select>
-   <input id="pSize" placeholder="Available sizes (e.g. M, L, XXL)">
-   <input id="pImage" type="file" accept="image/*">
-   <button class="gold wide" onclick="addProduct()">Add Product</button>
-  </div>
-  <hr>
-  <h3>Update existing product</h3>
-  <div class="admin-grid">
-   <select id="editId"></select><input id="editName" placeholder="Edit product name">
-   <input id="editPrice" type="number" min="0" placeholder="Edit price ₹"><input id="editColor" placeholder="Edit color">
-   <button onclick="updateProduct()">Save changes</button><button class="light" onclick="deleteProduct()">Delete selected product</button>
-  </div>
-  <p class="note">Owner password is set in the HTML code as CHANGE-ME-123. Change it before publishing. This simple HTML password is not strong security; do not use it for confidential data.</p>
-  <button class="light" onclick="ownerLogout()">Close Owner Panel</button>
- </section>
- <div class="toolbar">
-  <input id="search" placeholder="Search DARVIN products..." oninput="render()">
-  <select id="categoryFilter" onchange="render()"><option value="">All categories</option><option>Polo</option><option>Oversized T-shirt</option><option>Gym T-shirt</option><option>Plain T-shirt</option><option>Hoodie</option><option>Other</option></select>
-  <select id="sort" onchange="render()"><option value="default">Featured</option><option value="low">Price: Low to High</option><option value="high">Price: High to Low</option><option value="name">Name: A-Z</option></select>
- </div>
- <div id="productGrid" class="grid"></div>
- <p class="note">Prices marked “Price not set” need to be entered by the Owner. Product photos are shown in the supplied upload order.</p>
-</main>
-<footer>
- <div><strong>DARVIN — WEAR THE REBEL</strong><br>Men's clothing and streetwear</div>
- <div>Contact: <a href="mailto:YOUR_EMAIL@example.com">Email DARVIN</a><br>WhatsApp: <a href="https://wa.me/91XXXXXXXXXX">Chat / Order (replace number)</a><br>Instagram: <a href="https://www.instagram.com/darv.inofficial/">@darv.inofficial</a></div>
- <div><a href="https://ixmuzd-q8.myshopify.com/products/darvin-premium-oversized-black-t-shirt">Shopify product</a> · Share <a href="#" onclick="shareSite();return false">website</a></div>
-</footer>
-<div id="imageModal" class="modal" onclick="if(event.target===this)closeModal()"><div class="modalbox"><div class="modalhead"><strong id="modalTitle">Product image</strong><button onclick="closeModal()">✕</button></div><img id="modalImage" alt="Expanded product image"></div></div>
-<div id="cartModal" class="modal" onclick="if(event.target===this)closeCart()"><div class="modalbox"><div class="modalhead"><h2>Your Cart</h2><button onclick="closeCart()">✕</button></div><div id="cartItems" class="cartlist"></div><div id="cartTotal"></div><h3>Order Details</h3><form class="order" onsubmit="submitOrder(event)">
- <input id="customerName" required placeholder="Customer name"><input id="customerPhone" required type="tel" placeholder="Phone number">
- <input id="customerAddress" required placeholder="Full delivery address"><input id="customerCity" required placeholder="City / PIN code">
- <select id="payment"><option>Payment method to be confirmed</option><option>Cash on Delivery (COD)</option><option>UPI / Google Pay / PhonePe (details to be confirmed)</option></select>
- <textarea id="orderNote" placeholder="Order note / size / color"></textarea><button class="gold" type="submit">Send order via WhatsApp</button>
- <p class="note">Online payment is not integrated yet. Payment details must be configured securely before accepting prepaid orders.</p>
-</form></div></div>
-<script>
-const OWNER_PASSWORD = "CHANGE-ME-123"; // Replace this before publishing.
-const initialProducts = [{"id": "1", "name": "Grey Polo", "color": "Grey", "category": "Polo", "price": 0, "image": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 
+<body>
+
+<header>
+<div>
+<div class="brand">DARVIN</div>
+<div class="tag">WEAR THE REBEL</div>
+</div>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<button class="secondary" onclick="openCart()">BAG (<span id="cartCount">0</span>)</button>
+<button onclick="ownerLogin()">OWNER</button>
+</div>
+</header>
+
+<section class="hero">
+<div class="kicker">PREMIUM MEN'S STREETWEAR</div>
+<h1>NOT JUST A T-SHIRT.<br>IT'S YOUR IDENTITY.</h1>
+<p>Explore oversized essentials, cotton polos and signature DARVIN styles.</p>
+</section>
+
+<main>
+
+<section id="ownerPanel" class="owner">
+<h2>Owner Panel</h2>
+<p class="note">Quick local product management. Products saved here remain in this browser only; they do not automatically sync to all visitors or devices.</p>
+
+<div class="owner-grid">
+<input id="newName" placeholder="Product title">
+<input id="newPrice" type="number" min="1" placeholder="Price ₹">
+<input id="newColor" placeholder="Color">
+
+<select id="newCategory">
+<option>Oversized T-shirt</option>
+<option>Cotton Polo</option>
+<option>Kurta</option>
+<option>Hoodie</option>
+<option>Combo</option>
+<option>Other</option>
+</select>
+
+<input id="newSizes" value="M, L, XXL" placeholder="Sizes">
+<input id="newImage" type="file" accept="image/*">
+
+<button onclick="addOwnerProduct()">Add product</button>
+<button class="secondary" onclick="logoutOwner()">Close panel</button>
+</div>
+
+<p class="note">Password: CHANGE-ME-123. This is a front-end demo gate, not secure authentication.</p>
+</section>
+
+<div class="toolbar">
+<input id="search" placeholder="Search products..." oninput="renderProducts()">
+
+<select id="category" onchange="renderProducts()">
+<option value="">All categories</option>
+<option>Oversized T-shirt</option>
+<option>Cotton Polo</option>
+<option>Kurta</option>
+<option>Combo</option>
+<option>DARVIN Collection</option>
+</select>
+
+<select id="sort" onchange="renderProducts()">
+<option value="featured">Featured</option>
+<option value="low">Price low to high</option>
+<option value="high">Price high to low</option>
+<option value="name">Name A–Z</option>
+</select>
+</div>
+
+<h2 class="section-title">THE COLLECTION</h2>
+<p class="section-sub">Product photos are loaded directly from your GitHub repository assets.</p>
+
+<div id="productGrid" class="grid"></div>
+</main>
+
+<section class="video-section">
+<div class="kicker">DARVIN CAMPAIGN FILM</div>
+<h2 class="section-title">DARVIN Promo Video</h2>
+
+<div class="video-wrap">
+<video controls preload="metadata" playsinline
+poster="https://bhartinikhil4807-dev.github.io/Darvin-/darvin-campaign-banner.jpg">
+
+<source src="https://bhartinikhil4807-dev.github.io/Darvin-/VID_20261106_154953.mp4" type="video/mp4">
+<source src="https://bhartinikhil4807-dev.github.io/Darvin-/dropsho-hoodie-430gsm-video.mp4" type="video/mp4">
+
+Your browser does not support video playback.
+</video>
+<p class="video-caption">Campaign and product film • Use the video controls to play.</p>
+</div>
+</section>
+
+<footer>
+<div>
+<strong>DARVIN</strong>
+<p>Premium men's streetwear • WEAR THE REBEL</p>
+<p>© 2026 DARVIN. All rights reserved.</p>
+</div>
+
+<div>
+Instagram:
+<a href="https://www.instagram.com/darv.inofficial/" target="_blank" rel="noopener">@darv.inofficial</a>
+<br>
+<a href="https://ixmuzd-q8.myshopify.com/products/darvin-premium-oversized-black-t-shirt" target="_blank" rel="noopener">Shop Shopify product</a>
+</div>
+</footer>
+
+<div id="cartModal" class="modal" onclick="if(event.target===this)closeCart()">
+<div class="modalbox">
+<div class="modalhead">
+<h2>Your Bag</h2>
+<button class="secondary" onclick="closeCart()">Close</button>
+</div>
+
+<div id="cartItems"></div>
+<p id="cartTotal"></p>
+<button onclick="checkoutWhatsApp()">Order on WhatsApp</button>
+<p class="note">Set your official WhatsApp number in the script before taking orders.</p>
+</div>
+</div>
+
+<script>
+const OWNER_PASSWORD="CHANGE-ME-123";
+
+const repoProducts=[
+{category:"Oversized T-shirt",name:"Oversize 210 GSM — Black",color:"Black",image:"https://bhartinikhil4807-dev.github.io/Darvin-/oversize-210gsm-black-1.jpg",price:0,sizes:"M, L, XXL"},
+{category:"Oversized T-shirt",name:"Oversize 210 GSM — Beige",color:"Beige",image:"https://bhartinikhil4807-dev.github.io/Darvin-/oversize-210gsm-beige-6.jpg",price:0,sizes:"M, L, XXL"},
+{category:"Oversized T-shirt",name:"Oversize 210 GSM — Brown",color:"Brown",image:"https://bhartinikhil4807-dev.github.io/Darvin-/oversize-210gsm-brown-9.jpg",price:0,sizes:"M, L, XXL"},
+{category:"Oversized T-shirt",name:"Oversize 210 GSM — Lavender",color:"Lavender",image:"https://bhartinikhil4807-dev.github.io/Darvin-/oversize-210gsm-lavender-5.jpg",price:0,sizes:"M, L, XXL"},
+{category:"Oversized T-shirt",name:"Oversize 210 GSM — Navy",color:"Navy",image:"https://bhartinikhil4807-dev.github.io/Darvin-/oversize-210gsm-navy-13.jpg",price:0,sizes:"M, L, XXL"},
+{category:"Oversized T-shirt",name:"Oversize 210 GSM — Off White",color:"Off White",image:"https://bhartinikhil4807-dev.github.io/Darvin-/oversize-210gsm-off-white-11.jpg",price:0,sizes:"M, L, XXL"},
+{category:"Oversized T-shirt",name:"Oversize 210 GSM — Orange",color:"Orange",image:"https://bhartinikhil4807-dev.github.io/Darvin-/oversize-210gsm-orange-12.jpg",price:0,sizes:"M, L, XXL"},
+{category:"Oversized T-shirt",name:"Oversize 210 GSM — Sage Green",color:"Sage Green",image:"https://bhartinikhil4807-dev.github.io/Darvin-/oversize-210gsm-sage-green-8.jpg",price:0,sizes:"M, L, XXL"},
+{category:"Oversized T-shirt",name:"Oversize 210 GSM — White",color:"White",image:"https://bhartinikhil4807-dev.github.io/Darvin-/oversize-210gsm-white-2.jpg",price:0,sizes:"M, L, XXL"},
+{category:"Oversized T-shirt",name:"Oversize 210 GSM — White",color:"White",image:"https://bhartinikhil4807-dev.github.io/Darvin-/oversize-210gsm-white-4.jpg",price:0,sizes:"M, L, XXL"},
+{category:"Cotton Polo",name:"Cotton Polo — Navy",color:"Navy",image:"https://bhartinikhil4807-dev.github.io/Darvin-/cotton-polo-navy-5.jpg",price:0,sizes:"M, L, XXL"},
+{category:"Cotton Polo",name:"Cotton Polo — Navy",color:"Navy",image:"https://bhartinikhil4807-dev.github.io/Darvin-/cotton-polo-navy-6.jpg",price:0,sizes:"M, L, XXL"},
+{category:"Cotton Polo",name:"Cotton Polo — Navy",color:"Navy",image:"https://bhartinikhil4807-dev.github.io/Darvin-/cotton-polo-navy-7.jpg",price:0,sizes:"M, L, XXL"},
+{category:"Cotton Polo",name:"Cotton Polo — Navy",color:"Navy",image:"https://bhartinikhil4807-dev.github.io/Darvin-/cotton-polo-navy-8.jpg",price:0,sizes:"M, L, XXL"},
+{category:"Cotton Polo",name:"Cotton Polo — White",color:"White",image:"https://bhartinikhil4807-dev.github.io/Darvin-/cotton-polo-white-1.jpg",price:0,sizes:"M, L, XXL"},
+{category:"DARVIN Signature",name:"DARVIN 3 T-shirt Combo",color:"Combo",image:"https://bhartinikhil4807-dev.github.io/Darvin-/darvin-3-tshirt-combo.png.png",price:0,sizes:"M, L, XXL"},
+{category:"Kurta",name:"DARVIN Brown Kurta",color:"Brown",image:"https://bhartinikhil4807-dev.github.io/Darvin-/darvin-brown-kurta.png.png",price:0,sizes:"M, L, XXL"},
+{category:"DARVIN Collection",name:"DARVIN Model — Front",color:"Black",image:"https://bhartinikhil4807-dev.github.io/Darvin-/darvin-model-front-new.jpg",price:0,sizes:"M, L, XXL"},
+{category:"DARVIN Collection",name:"DARVIN Product — Hanging",color:"Black",image:"https://bhartinikhil4807-dev.github.io/Darvin-/darvin-product-hanging-new.jpg",price:0,sizes:"M, L, XXL"},
+{category:"DARVIN Collection",name:"DARVIN Print Close-up",color:"Black",image:"https://bhartinikhil4807-dev.github.io/Darvin-/darvin-print-closeup-new.jpg",price:0,sizes:"M, L, XXL"},
+{category:"DARVIN Collection",name:"DARVIN Model",color:"Black",image:"https://bhartinikhil4807-dev.github.io/Darvin-/darvin-model.jpg",price:0,sizes:"M, L, XXL"},
+{category:"DARVIN Collection",name:"DARVIN Tee Hanging",color:"Black",image:"https://bhartinikhil4807-dev.github.io/Darvin-/darvin-tee-hanging.jpg",price:0,sizes:"M, L, XXL"}
+];
+
+const stored=(()=>{
+try{return JSON.parse(localStorage.getItem('darvin_products_v2')||'[]')}
+catch(e){return []}
+})();
+
+let products=stored.length?stored:repoProducts.map((p,i)=>({...p,id:'repo-'+i}));
+let cart=[];
+
+function safe(s){
+return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))
+}
+
+function saveProducts(){
+localStorage.setItem('darvin_products_v2',JSON.stringify(products))
+}
+
+function imageHTML(p){
+return `<img src="${safe(p.image)}" alt="${safe(p.name)}" loading="lazy"
+onerror="this.classList.add('broken');this.nextElementSibling.style.display='flex'">
+<div class="fallback"><b>DARVIN</b><span>${safe(p.color||'STREETWEAR')}</span><small>Image file not found in repository</small></div>`
+}
+
+function renderProducts(){
+let q=document.getElementById('search').value.toLowerCase();
+let cat=document.getElementById('category').value;
+let sort=document.getElementById('sort').value;
+
+let list=products.filter(p=>
+(p.name+' '+p.color+' '+p.category).toLowerCase().includes(q)&&
+(!cat||p.category===cat)
+);
+
+if(sort==='low')list.sort((a,b)=>(a.price||999999)-(b.price||999999));
+if(sort==='high')list.sort((a,b)=>(b.price||0)-(a.price||0));
+if(sort==='name')list.sort((a,b)=>a.name.localeCompare(b.name));
+
+document.getElementById('productGrid').innerHTML=list.map(p=>`
+<article class="card">
+<div class="photo">${imageHTML(p)}</div>
+<div class="details">
+<div class="category">${safe(p.category)}</div>
+<h3>${safe(p.name)}</h3>
+<div class="meta">Color: ${safe(p.color)} • Sizes: ${safe(p.sizes||'M, L, XXL')}</div>
+<div class="price">${p.price>0?'₹'+Number(p.price).toLocaleString('en-IN'):'Price not set'}</div>
+<div class="actions">
+<button onclick="addCart('${safe(String(p.id))}')">Add to Bag</button>
+<button class="secondary" onclick="viewImage('${safe(p.image)}','${safe(p.name)}')">View Photo</button>
+</div>
+</div>
+</article>
+`).join('')||'<p class="note">No products match this search.</p>'
+}
+
+function ownerLogin(){
+let pass=prompt('Enter DARVIN owner password');
+if(pass===OWNER_PASSWORD)document.getElementById('ownerPanel').classList.add('open');
+else if(pass!==null)alert('Incorrect password')
+}
+
+function logoutOwner(){
+document.getElementById('ownerPanel').classList.remove('open')
+}
+
+function addOwnerProduct(){
+let name=document.getElementById('newName').value.trim();
+let price=Number(document.getElementById('newPrice').value);
+let file=document.getElementById('newImage').files[0];
+
+if(!name||price<=0){alert('Enter product name and valid price');return}
+
+let finish=image=>{
+products.unshift({
+id:'owner-'+Date.now(),
+name,price,
+color:document.getElementById('newColor').value.trim(),
+category:document.getElementById('newCategory').value,
+sizes:document.getElementById('newSizes').value,
+image
+});
+saveProducts();
+renderProducts();
+document.getElementById('newName').value='';
+document.getElementById('newPrice').value='';
+document.getElementById('newImage').value='';
+alert('Saved locally in this browser')
+};
+
+if(!file){alert('Please select a product photo');return}
+let reader=new FileReader();
+reader.onload=()=>finish(reader.result);
+reader.readAsDataURL(file)
+}
+
+function addCart(id){
+let p=products.find(x=>String(x.id)===String(id));
+if(!p)return;
+if(!(p.price>0)){
+alert('This product price is not set yet. Please contact DARVIN or set price in Owner Panel.');
+return
+}
+cart.push(p);
+document.getElementById('cartCount').textContent=cart.length
+}
+
+function openCart(){
+document.getElementById('cartItems').innerHTML=cart.map((p,i)=>`
+<div class="cart-row">
+<span>${safe(p.name)}<br><small>${safe(p.color)}</small></span>
+<span>₹${Number(p.price).toLocaleString('en-IN')}
+<button class="secondary" onclick="removeCart(${i})">×</button></span>
+</div>
+`).join('')||'<p class="note">Your bag is empty.</p>';
+
+document.getElementById('cartTotal').textContent='Total: ₹'+
+cart.reduce((s,p)=>s+Number(p.price||0),0).toLocaleString('en-IN');
+
+document.getElementById('cartModal').classList.add('show')
+}
+
+function closeCart(){
+document.getElementById('cartModal').classList.remove('show')
+}
+
+function removeCart(i){
+cart.splice(i,1);
+document.getElementById('cartCount').textContent=cart.length;
+openCart()
+}
+
+function checkoutWhatsApp(){
+if(!cart.length){alert('Your bag is empty');return}
+let total=cart.reduce((s,p)=>s+Number(p.price||0),0);
+let msg='DARVIN ORDER%0A'+
+cart.map(p=>encodeURIComponent(p.name+' - '+p.color+' - ₹'+p.price)).join('%0A')+
+'%0ATotal: ₹'+total+
+'%0APlease contact me to confirm size, address and payment.';
+window.open('https://wa.me/91XXXXXXXXXX?text='+msg,'_blank')
+}
+
+function viewImage(src,title){
+let w=window.open(src,'_blank');
+if(!w)alert('Please allow popup to view image: '+title)
+}
+
+renderProducts();
+</script>
+</body>
+</html>
